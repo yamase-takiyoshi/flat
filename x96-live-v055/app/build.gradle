@@ -1,0 +1,14 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'jp.x96.livecapture'
+ compileSdk 35
+ defaultConfig {
+  applicationId 'jp.x96.livecapture'
+  minSdk 29
+  targetSdk 32
+  versionCode 55
+  versionName '0.5.5'
+ }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
+dependencies { implementation 'com.alphacephei:vosk-android:0.3.47' }
