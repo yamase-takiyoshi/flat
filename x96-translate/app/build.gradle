@@ -1,0 +1,14 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'com.nittakeiba.x96offline'
+ compileSdk 35
+ defaultConfig {
+  applicationId 'com.nittakeiba.x96offline'
+  minSdk 23
+  targetSdk 32
+  versionCode 2
+  versionName '0.5.4'
+ }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
+dependencies { implementation 'com.google.mlkit:translate:17.0.3' }
