@@ -138,6 +138,14 @@ public class CaptureService extends Service {
    ByteArrayOutputStream b=new ByteArrayOutputStream();
    int c;while((c=in.read())!=-1&&c!=10&&b.size()<2048)b.write(c);
    String first=b.toString("UTF-8").trim();
+   // Drain the remaining HTTP request headers before writing a response.
+   // Closing a socket with unread request bytes can reset the connection.
+   int prev=10, count=0, lineBytes=0;
+   while((c=in.read())!=-1 && count++<8192){
+    if(c==10 && lineBytes<=1)break;
+    if(c==10)lineBytes=0;
+    else lineBytes++;
+   }
    JSONObject response=new JSONObject();
    int code=200;
    if(first.startsWith("GET /health")){
