@@ -14,10 +14,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Install SDK 35 using runner Android SDK
+      - name: Ensure SDK 35 installed
         run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          sdkmanager --install "platforms;android-35" "build-tools;35.0.0"
+          SDKMGR="$(find "$ANDROID_HOME/cmdline-tools" -name sdkmanager -type f | head -n 1)"
+          test -n "$SDKMGR"
+          "$SDKMGR" --install "platforms;android-35" "build-tools;35.0.0"
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.7'
