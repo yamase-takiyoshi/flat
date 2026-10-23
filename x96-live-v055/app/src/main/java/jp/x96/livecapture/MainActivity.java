@@ -95,7 +95,11 @@ public class MainActivity extends Activity {
      ZipEntry e;byte[] buf=new byte[16384];
      while((e=zin.getNextEntry())!=null){
       if(!e.getName().startsWith(MODEL_NAME+"/"))continue;
-      File out=new File(tmp,e.getName().substring(MODEL_NAME.length()+1));
+      // The archive's top-level directory is a valid ZIP entry.
+      // Its relative name is empty, so skip it before the zip-slip check.
+      String relative=e.getName().substring(MODEL_NAME.length()+1);
+      if(relative.isEmpty())continue;
+      File out=new File(tmp,relative);
       String base=tmp.getCanonicalPath()+File.separator;
       if(!out.getCanonicalPath().startsWith(base))throw new IOException("ZIPパスが不正");
       if(e.isDirectory()){out.mkdirs();continue;}
