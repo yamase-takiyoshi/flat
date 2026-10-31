@@ -1,749 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NPO法人フラット寺町 組織図・マインドマップ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f6fb">
+<meta name="description" content="特定非営利活動法人フラット寺町の公開情報調査をまとめたオフライン対応インタラクティブ・マインドマップ。4シート・354トピック。">
+<title>フラット寺町 | 深掘り調査マインドマップ</title>
 <style>
-:root{
-  --bg:#f7faf9;
-  --paper:#ffffff;
-  --ink:#1f2933;
-  --muted:#667780;
-  --line:#dbe8e5;
-  --red:#ff6b7a;
-  --orange:#ff9d5c;
-  --green:#55b883;
-  --teal:#58c4bd;
-  --blue:#4fb9e8;
-  --purple:#c45ade;
-  --pink:#f36b8f;
-  --soft-red:#fff1f3;
-  --soft-orange:#fff4eb;
-  --soft-green:#eefaf3;
-  --soft-teal:#effafa;
-  --soft-blue:#eff8fd;
-  --soft-purple:#fbf0ff;
-  --soft-pink:#fff0f5;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:linear-gradient(180deg,#ffffff 0%,var(--bg) 280px);
-  color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
-  line-height:1.72;
-}
-header{
-  padding:42px 18px 30px;
-  text-align:center;
-  border-bottom:1px solid var(--line);
-}
-h1{
-  margin:0;
-  font-size:clamp(27px,5vw,48px);
-  line-height:1.25;
-  letter-spacing:.04em;
-  font-weight:800;
-}
-.lead{
-  margin:16px auto 0;
-  max-width:880px;
-  color:var(--muted);
-  font-size:15.5px;
-}
-nav{
-  width:min(1180px,100%);
-  margin:0 auto;
-  padding:16px 14px 0;
-}
-.navbox{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 8px 26px rgba(31,41,51,.05);
-}
-.navbox a{
-  display:inline-block;
-  margin:4px;
-  padding:7px 11px;
-  border-radius:999px;
-  background:#f2f7f6;
-  color:#264653;
-  text-decoration:none;
-  font-size:13px;
-  border:1px solid #e1eeee;
-}
-main{
-  width:min(1180px,100%);
-  margin:0 auto;
-  padding:18px 14px 54px;
-}
-.section-title{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:0 0 14px;
-  font-size:22px;
-}
-.card{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:18px;
-  box-shadow:0 10px 30px rgba(31,41,51,.06);
-}
-.mindmap-wrap{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:16px;
-  box-shadow:0 10px 30px rgba(31,41,51,.06);
-  overflow:auto;
-  -webkit-overflow-scrolling:touch;
-}
-.mindmap-note{
-  color:var(--muted);
-  font-size:13px;
-  margin:0 0 12px;
-}
-.mindmap{
-  position:relative;
-  width:1720px;
-  height:1120px;
-  margin:0 auto;
-  background:
-    radial-gradient(circle at center, rgba(88,196,189,.10), transparent 26%),
-    linear-gradient(180deg,#fff,#fbfdfd);
-  border-radius:22px;
-  border:1px solid #edf2f1;
-}
-.mindmap svg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-}
-.mnode{
-  position:absolute;
-  min-width:150px;
-  max-width:255px;
-  padding:10px 12px;
-  border-radius:14px;
-  background:#fff;
-  border:2px solid var(--line);
-  box-shadow:0 7px 18px rgba(31,41,51,.08);
-  font-size:13px;
-  line-height:1.48;
-}
-.mnode strong{
-  display:block;
-  font-size:14px;
-  margin-bottom:4px;
-}
-.mnode ul{
-  margin:4px 0 0 1.1em;
-  padding:0;
-}
-.mnode li{margin:2px 0}
-.center-node{
-  left:690px;
-  top:500px;
-  width:340px;
-  max-width:340px;
-  padding:22px 20px;
-  text-align:center;
-  border:3px solid #1f2933;
-  font-size:20px;
-  font-weight:800;
-  line-height:1.45;
-  border-radius:22px;
-  background:#fff;
-}
-.n-red{border-color:var(--red);background:var(--soft-red)}
-.n-orange{border-color:var(--orange);background:var(--soft-orange)}
-.n-green{border-color:var(--green);background:var(--soft-green)}
-.n-teal{border-color:var(--teal);background:var(--soft-teal)}
-.n-blue{border-color:var(--blue);background:var(--soft-blue)}
-.n-purple{border-color:var(--purple);background:var(--soft-purple)}
-.n-pink{border-color:var(--pink);background:var(--soft-pink)}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-  gap:15px;
-  align-items:start;
-  margin-top:18px;
-}
-.card.wide{grid-column:1/-1}
-.card h2{
-  margin:0 0 12px;
-  font-size:20px;
-  line-height:1.35;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  letter-spacing:.02em;
-}
-.dot{
-  width:13px;
-  height:13px;
-  border-radius:50%;
-  flex:0 0 auto;
-}
-.red{background:var(--red)}
-.orange{background:var(--orange)}
-.green{background:var(--green)}
-.teal{background:var(--teal)}
-.blue{background:var(--blue)}
-.purple{background:var(--purple)}
-.pink{background:var(--pink)}
-.card.redish{background:linear-gradient(180deg,var(--soft-red),#fff)}
-.card.orangeish{background:linear-gradient(180deg,var(--soft-orange),#fff)}
-.card.greenish{background:linear-gradient(180deg,var(--soft-green),#fff)}
-.card.tealish{background:linear-gradient(180deg,var(--soft-teal),#fff)}
-.card.blueish{background:linear-gradient(180deg,var(--soft-blue),#fff)}
-.card.purpleish{background:linear-gradient(180deg,var(--soft-purple),#fff)}
-.card.pinkish{background:linear-gradient(180deg,var(--soft-pink),#fff)}
-.group{
-  border-left:4px solid var(--line);
-  padding-left:13px;
-  margin:12px 0;
-}
-.group h3{
-  margin:0 0 5px;
-  font-size:15.5px;
-  color:#24333b;
-}
-p{margin:8px 0}
-ul{
-  margin:7px 0 0 1.15em;
-  padding:0;
-}
-li{margin:.22em 0}
-.tag{
-  display:inline-block;
-  padding:3px 9px;
-  border-radius:999px;
-  background:#edf7f5;
-  color:#315f59;
-  font-size:12.5px;
-  margin:3px 3px 3px 0;
-  border:1px solid #d9eeee;
-}
-.summary{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:10px;
-}
-.summary div{
-  padding:13px;
-  border-radius:16px;
-  background:#f4fbfa;
-  border:1px solid #dcf1ee;
-}
-.note{
-  margin-top:18px;
-  color:var(--muted);
-  font-size:13.5px;
-}
-footer{
-  text-align:center;
-  color:#8a9aa2;
-  font-size:12px;
-  padding:24px 14px 38px;
-}
-@media (max-width:640px){
-  header{padding:32px 14px 22px}
-  .lead{font-size:14px;text-align:left}
-  nav{padding:12px 10px 0}
-  main{padding:14px 10px 42px}
-  .mindmap-wrap{padding:12px;border-radius:18px}
-  .mindmap{transform:scale(.72);transform-origin:top left;margin-bottom:-310px}
-  .grid{grid-template-columns:1fr;gap:12px}
-  .card{border-radius:18px;padding:16px}
-  .card h2{font-size:18px}
-}
-@media print{
-  body{background:#fff}
-  nav{display:none}
-  header{padding:18px 0 12px}
-  main{width:100%;padding:8px}
-  .card,.mindmap-wrap{box-shadow:none;break-inside:avoid}
-  .mindmap-wrap{overflow:visible}
-}
+:root {color-scheme:light; --ink:#152440; --muted:#687992; --border:#dfe6f0; --surface:#fff; --canvas:#f7f9fd; --navy:#283c83; --blue:#4461c2; --shadow:0 9px 32px rgba(25,42,81,.08); --radius:14px; --left:270px; --right:316px}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--canvas);-webkit-text-size-adjust:100%}button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,input:focus-visible{outline:3px solid #9db5fa;outline-offset:1px}a{color:#2651b6;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}svg{display:block}
+.app{height:100vh;height:100dvh;display:flex;flex-direction:column;min-height:0}
+.header{flex:0 0 auto;display:flex;align-items:center;gap:14px;min-height:72px;padding:11px 20px;background:#fff;border-bottom:1px solid var(--border);z-index:10}
+.logo{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;color:white;background:linear-gradient(145deg,#384b9d,#697ee0);box-shadow:0 6px 16px rgba(59,74,154,.24);flex:none}
+.brand{min-width:0}.eyebrow{font-weight:750;font-size:10px;letter-spacing:.12em;color:#6677a5;text-transform:uppercase}.brand h1{margin:2px 0 3px;font-size:19px;font-weight:800;letter-spacing:.015em;white-space:nowrap}.brand p{margin:0;color:var(--muted);font-size:11px}
+.header-end{margin-left:auto;display:flex;align-items:center;gap:10px;white-space:nowrap}.chip{display:inline-flex;align-items:center;gap:5px;padding:7px 10px;background:#f1f4fc;color:#53628a;border:1px solid #e6eafa;border-radius:999px;font-size:11px;font-weight:700}.chip i{width:6px;height:6px;background:#52a778;border-radius:50%}
+.tabsbar{display:flex;gap:8px;align-items:center;background:#fff;border-bottom:1px solid var(--border);padding:11px 18px;overflow:auto hidden;scrollbar-width:thin;flex:none}
+.tab{background:#f4f6fb;border:1px solid transparent;color:#68748e;border-radius:10px;padding:10px 14px;white-space:nowrap;font-size:12px;font-weight:800;display:flex;align-items:center;gap:8px;transition:.12s}.tab:hover{background:#e9eefc}.tab.active{background:#e7ebff;border-color:#cdd7ff;color:#293e91}.tab .n{background:rgba(79,98,166,.12);border-radius:99px;padding:2px 6px;font-size:10px;color:#6372a0}
+.tools{background:white;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 16px;z-index:8;flex:none}.tool-group{display:flex;align-items:center;gap:5px}.tool{border:1px solid var(--border);border-radius:9px;padding:7px 11px;background:#fff;color:#4f6080;font-size:12px;font-weight:700;min-height:33px}.tool:hover{background:#f4f6fc}.tool.selected{background:#e8efff;border-color:#b7c8fc;color:#2b449d}.tool.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.tool-icon{font-weight:900;font-size:15px}.vr{height:22px;border-left:1px solid var(--border);margin:0 3px}.searchwrap{display:flex;align-items:center;border:1px solid var(--border);background:#f7f9fd;border-radius:9px;padding:0 10px;gap:6px;min-width:165px;flex:1;max-width:355px}.searchwrap:focus-within{border-color:#8ea6fa}.searchwrap svg{color:#7990ac;flex:none}.searchwrap input{width:100%;border:0;outline:0;background:transparent;padding:8px 1px;color:var(--ink);font-size:12px}.result-count{font-size:11px;white-space:nowrap;color:#71809b}.tools .spacer{flex:1}
+.body{display:flex;min-height:0;flex:1;position:relative}.sidebar{width:var(--left);min-width:var(--left);background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;min-height:0;z-index:4}.side-top{padding:18px 15px 10px;display:flex;justify-content:space-between;align-items:center}.side-heading{font-weight:800;font-size:13px}.side-count{color:#8b98aa;font-size:11px}.side-scroll{overflow:auto;padding:0 10px 24px;scrollbar-width:thin;min-height:0}.side-note{padding:12px;background:#f3f5fa;border-radius:11px;font-size:11px;line-height:1.65;color:#6e7b92;margin:12px 3px}.side-item{border:1px solid transparent;width:100%;padding:11px 9px;border-radius:11px;background:transparent;color:var(--ink);display:flex;align-items:flex-start;text-align:left;gap:9px;margin-bottom:3px}.side-item:hover{background:#f5f7fc}.side-item.active{background:#eaf0ff;border-color:#d5e0ff}.side-dot{width:9px;height:9px;border-radius:50%;margin-top:5px;flex:none;background:var(--c)}.side-title{font-size:12px;line-height:1.55;font-weight:720;overflow-wrap:anywhere}.side-desc{display:block;color:#91a0b6;font-size:10px;margin-top:4px}.match-list .side-item{border-bottom:1px solid #edf0f7;border-radius:6px}
+.workspace{flex:1;min-width:0;display:flex;flex-direction:column;min-height:0;position:relative;background:var(--canvas)}.canvas-top{position:absolute;top:17px;left:20px;right:20px;pointer-events:none;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.canvas-caption{background:rgba(255,255,255,.88);border:1px solid rgba(214,224,240,.8);box-shadow:0 3px 15px rgba(65,85,140,.05);padding:10px 12px;border-radius:12px;backdrop-filter:blur(8px);max-width:500px}.canvas-caption b{font-size:12px}.canvas-caption div{font-size:10px;line-height:1.65;color:#8795a9;margin-top:3px}.canvas-label{font-size:10px;color:#647393;background:rgba(255,255,255,.86);border:1px solid #e2e8f1;padding:8px 11px;border-radius:9px;white-space:nowrap}
+#viewport{position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab;background-image:radial-gradient(#d6dfef .8px,transparent .8px);background-size:20px 20px;background-position:3px 3px}#viewport.dragging{cursor:grabbing}.world{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}.lines{position:absolute;top:0;left:0;pointer-events:none;overflow:visible}
+.mapnode{position:absolute;display:flex;align-items:center;justify-content:space-between;gap:9px;transform:translate(-50%,-50%);padding:12px 13px;background:#fff;border:1.3px solid #dfe5ef;border-left:4px solid var(--branch);box-shadow:0 4px 14px rgba(31,52,94,.06);border-radius:11px;cursor:pointer;user-select:none;transition:box-shadow .15s,border-color .15s}.mapnode:hover{box-shadow:0 6px 18px rgba(31,52,94,.13);border-color:var(--branch)}.mapnode.active{box-shadow:0 0 0 3px rgba(81,102,203,.25),0 9px 22px rgba(31,52,94,.14);border-color:var(--branch)}.mapnode.root{border:0;border-radius:14px;padding:16px 18px;color:white;background:linear-gradient(140deg,#28387c,#475ec0);box-shadow:0 11px 32px rgba(50,66,146,.28)}.mapnode.root.active{box-shadow:0 0 0 4px rgba(122,138,236,.23),0 11px 32px rgba(50,66,146,.28)}.node-inner{overflow:hidden;flex:1}.node-title{font-size:12px;line-height:1.48;font-weight:760;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow-wrap:anywhere}.root .node-title{font-size:15px;font-weight:800;line-height:1.5}.node-meta{font-size:9px;margin-top:4px;color:#8795a9}.root .node-meta{color:#ccd4ff}.twisty{width:24px;height:24px;border-radius:8px;border:1px solid #e1e8f3;display:grid;place-items:center;flex:none;color:#435fba;background:#f1f5ff;font-size:16px;font-weight:800;padding:0}.twisty:hover{background:#dfebff}.root .twisty{border-color:#8597d6;color:white;background:#6176c0}.mapnode.searchhit:not(.active){outline:3px solid #f8c76e;outline-offset:2px}
+.zoom{display:flex;gap:4px;align-items:center;position:absolute;right:21px;bottom:21px;background:#fff;border:1px solid var(--border);padding:6px;border-radius:12px;box-shadow:var(--shadow);z-index:3}.zbtn{width:35px;height:35px;border:0;background:#f4f6fc;color:#344875;border-radius:8px;font-weight:800;font-size:18px}.zbtn:hover{background:#e6edfb}.zreadout{font-size:11px;color:#7083a0;min-width:43px;text-align:center}
+.detail{width:var(--right);min-width:var(--right);display:flex;flex-direction:column;background:white;border-left:1px solid var(--border);z-index:5;min-height:0}.detail-header{padding:19px 18px 12px;border-bottom:1px solid #edf1f7;display:flex;justify-content:space-between;align-items:center}.detail-header h2{margin:0;font-size:13px}.detail-scroll{overflow:auto;min-height:0;padding:18px 19px 25px;scrollbar-width:thin}.detail-brow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:10px;color:#8590a6;margin-bottom:12px}.detail-brow .pill{background:#eef2ff;padding:3px 8px;border-radius:100px;color:#4e63a0;font-weight:700}.detail-title{font-size:19px;line-height:1.52;margin:0 0 15px;font-weight:850;overflow-wrap:anywhere}.detail-labels{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}.flag{background:#e8f5ed;color:#32885a;font-size:11px;border-radius:5px;padding:5px 8px;font-weight:750}.flag.warn{background:#fff0df;color:#a26a25}.detail-section{margin-top:21px}.detail-section h3{font-size:11px;letter-spacing:.06em;color:#8b99af;border-bottom:1px solid #e8edf5;padding-bottom:8px;text-transform:uppercase}.detail-note{font-size:12px;line-height:1.85;overflow-wrap:anywhere;color:#37445a;white-space:normal}.detail-note .para{margin-bottom:11px}.detail-note .url{display:block;padding:3px 0}.detail-note .source{font-size:11px;color:#7887a0}.detail-hint{font-size:11px;line-height:1.8;color:#75839e;background:#f3f6fb;border-radius:9px;padding:12px;margin-top:20px}.path{font-size:11px;color:#7383a1;line-height:1.7;overflow-wrap:anywhere}.detail-stat{display:flex;gap:8px}.statbox{background:#f4f6fb;padding:12px;border:1px solid #e8edf4;border-radius:10px;flex:1}.statbox strong{font-size:20px;color:#334996;display:block}.statbox span{font-size:10px;color:#7786a2}.close-detail{border:0;background:#f3f5fb;color:#6c7c96;border-radius:7px;width:26px;height:26px;display:none}
+.outline{position:absolute;inset:0;overflow:auto;background:#f7f9fd;padding:30px 26px 100px;display:none;scrollbar-width:thin}.outline.on{display:block}.outline-inner{max-width:850px;margin:0 auto}.outline-header{margin-bottom:22px}.outline-header h2{font-size:22px;margin:0 0 9px}.outline-header p{font-size:12px;color:#8390a5;line-height:1.7}.treeul{list-style:none;margin:0;padding:0}.treeul .treeul{border-left:2px solid #e5eafa;margin-left:18px;padding-left:18px}.tree-li{margin:7px 0}.tree-row{display:flex;align-items:flex-start;gap:8px;background:#fff;border:1px solid #e5eaf3;border-radius:10px;padding:10px 12px;line-height:1.6}.tree-row:hover{background:#f5f7ff}.tree-row.active{border-color:#99aaef;background:#eef2ff}.tree-open{border:0;background:#eef1fa;border-radius:6px;width:24px;flex:none;font-weight:700;color:#64749b}.tree-open.empty{background:transparent}.tree-select{border:0;background:transparent;text-align:left;padding:0;color:#273a59;font-size:12px;flex:1;font-weight:650;overflow-wrap:anywhere}.tree-mini{font-size:10px;color:#8b97aa;white-space:nowrap}.treeul.hidden{display:none}.tree-root .tree-row{background:#e7ebff;border-color:#cbd4fd}.tree-root .tree-select{font-size:14px;font-weight:800}
+.footer{border-top:1px solid var(--border);background:white;color:#8895a9;font-size:10px;padding:7px 18px;display:flex;justify-content:space-between;gap:9px;flex:none;z-index:8}.footer strong{color:#5e6f98}
+#toast{position:absolute;bottom:70px;left:50%;transform:translateX(-50%);background:#203052;color:white;padding:10px 17px;border-radius:8px;font-size:12px;z-index:40;pointer-events:none;opacity:0;transition:opacity .2s}#toast.show{opacity:1}
+@media(max-width:1170px){:root{--left:235px;--right:283px}.header{padding:10px 14px}.detail-scroll{padding:15px}.detail-title{font-size:17px}.side-top{padding-left:12px}}
+@media(max-width:950px){:root{--left:235px;--right:305px}.sidebar{position:absolute;top:0;bottom:0;left:0;box-shadow:var(--shadow);transform:translateX(-103%);transition:transform .2s}.sidebar.show{transform:translateX(0)}.detail{position:absolute;right:0;top:0;bottom:0;box-shadow:var(--shadow);transform:translateX(103%);transition:transform .2s}.detail.show{transform:translateX(0)}.close-detail{display:inline-grid;place-items:center}.brand h1{font-size:17px}.header-end .chip:last-child{display:none}}
+@media(max-width:650px){.header{min-height:61px;padding:7px 12px}.logo{height:37px;width:37px}.brand h1{font-size:15px}.brand p{font-size:10px}.header-end{display:none}.tabsbar{padding:8px 10px;gap:6px}.tab{padding:8px 9px;font-size:11px}.tools{padding:8px;gap:5px}.tool{padding:7px 9px;font-size:11px}.searchwrap{min-width:100%;order:5;max-width:none}.result-count{order:6}.tools .spacer{display:none}.vr{display:none}.canvas-label{display:none}.canvas-top{top:8px;left:9px;right:9px}.canvas-caption{padding:7px 9px}.canvas-caption div{display:none}.canvas-caption b{font-size:10px}.zoom{right:10px;bottom:13px}.detail{width:min(92vw,355px);min-width:0}.footer{font-size:9px;padding:7px}.footer span:last-child{display:none}.outline{padding:20px 12px 70px}.treeul .treeul{margin-left:8px;padding-left:8px}}
+@media print{html,body,.app{height:auto!important;overflow:visible!important}.header,.tabsbar,.tools,.sidebar,.detail,.footer,.zoom,.canvas-top{display:none!important}.body,.workspace{height:auto;display:block}.outline{position:static;display:block!important;padding:0}.treeul.hidden{display:block}.tree-row{break-inside:avoid;box-shadow:none}.tree-select{font-size:11px}#viewport{display:none}.outline-header h2{font-size:18px}}
 </style>
 </head>
 <body>
-<header>
-  <h1>NPO法人フラット寺町<br>組織図・マインドマップ</h1>
-  <p class="lead">LINEで画像を送ると細かい文字が圧縮で荒れやすいため、マインドマップもHTML/SVGで作りました。画像ではなく文字として表示されるので、URL共有でも読みやすさを保てます。</p>
-</header>
-
-<nav>
-  <div class="navbox" aria-label="目次">
-    <a href="#mindmap">マインドマップ</a>
-    <a href="#overview">全体像</a>
-    <a href="#hq">法人本部</a>
-    <a href="#work">就労支援部門</a>
-    <a href="#home">共同生活援助部門</a>
-    <a href="#shop">店舗・生産活動部門</a>
-    <a href="#flow">利用者支援の流れ</a>
-    <a href="#money">収益・費用</a>
-    <a href="#area">地域連携</a>
-    <a href="#summary">組織のまとめ</a>
-  </div>
-</nav>
-
-<main>
-  <section id="mindmap">
-    <h2 class="section-title"><span class="dot teal"></span>マインドマップ</h2>
-    <div class="mindmap-wrap">
-      <p class="mindmap-note">横に長い図です。スマホでは左右にスクロールして確認できます。</p>
-      <div class="mindmap" role="img" aria-label="NPO法人フラット寺町の組織図マインドマップ">
-        <svg viewBox="0 0 1720 1120" preserveAspectRatio="none">
-          <path d="M860 560 C760 250, 540 150, 310 105" stroke="#58c4bd" stroke-width="4" fill="none"/>
-          <path d="M860 560 C960 230, 1120 120, 1420 95" stroke="#ff6b7a" stroke-width="4" fill="none"/>
-          <path d="M860 560 C1010 330, 1190 320, 1450 315" stroke="#ff9d5c" stroke-width="4" fill="none"/>
-          <path d="M860 560 C1030 500, 1200 510, 1450 510" stroke="#55b883" stroke-width="4" fill="none"/>
-          <path d="M860 560 C1040 650, 1220 720, 1450 745" stroke="#58c4bd" stroke-width="4" fill="none"/>
-          <path d="M860 560 C1020 790, 1180 930, 1420 970" stroke="#4fb9e8" stroke-width="4" fill="none"/>
-          <path d="M860 560 C650 820, 520 960, 280 990" stroke="#c45ade" stroke-width="4" fill="none"/>
-          <path d="M860 560 C630 650, 460 710, 240 735" stroke="#f36b8f" stroke-width="4" fill="none"/>
-          <path d="M860 560 C630 470, 430 420, 230 420" stroke="#55b883" stroke-width="4" fill="none"/>
-        </svg>
-
-        <div class="mnode center-node">NPO法人フラット寺町<br>町 組織図</div>
-
-        <div class="mnode n-teal" style="left:130px;top:58px">
-          <strong>組織のまとめ</strong>
-          <ul>
-            <li>法人本部：経営・管理・請求・会計</li>
-            <li>就労支援：働く力を育てる</li>
-            <li>共同生活援助：暮らしを支える</li>
-            <li>店舗・生産活動：実践の仕事</li>
-            <li>地域連携：地域とつながる</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-red" style="left:1330px;top:50px">
-          <strong>全体像</strong>
-          <ul>
-            <li>岩手県盛岡市の障害福祉サービス法人</li>
-            <li>就労支援・共同生活援助・カフェ運営を組み合わせる</li>
-            <li>働く場所・暮らす場所・地域とつながる場所</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-orange" style="left:1335px;top:245px">
-          <strong>法人本部</strong>
-          <ul>
-            <li>理事長：法人全体の統括</li>
-            <li>理事会：事業方針・予算・決算</li>
-            <li>監事：業務監査・会計監査</li>
-            <li>事務局：総務・経理・労務・請求・広報</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-green" style="left:1335px;top:455px">
-          <strong>就労支援部門</strong>
-          <ul>
-            <li>ファーム仁王：B型、生活リズム、作業訓練、工賃向上</li>
-            <li>ファーム神明町：A型、就労移行、就労定着、就労訓練</li>
-            <li>管理者・サービス管理責任者・支援員等</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-teal" style="left:1335px;top:680px">
-          <strong>共同生活援助部門</strong>
-          <ul>
-            <li>共同生活援助事業所アイランド</li>
-            <li>うぇだぼ小路、ひまわり荘2号館、リバーヒルッジ等</li>
-            <li>食事・服薬確認・生活相談・掃除洗濯・健康管理</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-blue" style="left:1315px;top:910px">
-          <strong>店舗・生産活動部門</strong>
-          <ul>
-            <li>寺町カフェ、都カフェ、喫茶さわらび、杜のカフェ等</li>
-            <li>調理・接客・レジ・清掃・菓子製造・販売</li>
-            <li>就労訓練、原資づくり、地域との接点</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-purple" style="left:105px;top:900px">
-          <strong>地域連携部門</strong>
-          <ul>
-            <li>町内活動</li>
-            <li>イベント参加</li>
-            <li>商品販売</li>
-            <li>市民活動との連携</li>
-            <li>障がい理解と社会参加の促進</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-pink" style="left:65px;top:665px">
-          <strong>利用者支援の流れ</strong>
-          <ul>
-            <li>相談・利用開始：本人、家族、相談支援、行政、医療</li>
-            <li>日中活動：ファーム・カフェ・食品製造販売</li>
-            <li>生活支援：アイランド・各グループホーム</li>
-            <li>ステップアップ：B型→A型→就労移行→一般就労</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-green" style="left:65px;top:365px">
-          <strong>費用構造</strong>
-          <ul>
-            <li>人件費：給与・社会保険・処遇改善・夜間支援員</li>
-            <li>事業費：食材費・原材料費・商品仕入・店舗運営費</li>
-            <li>住居関連費：家賃・修繕・水道光熱・備品・防災設備</li>
-            <li>管理費：事務・通信・保険・会計労務・広報</li>
-          </ul>
-        </div>
-
-        <div class="mnode n-pink" style="left:275px;top:745px">
-          <strong>収益構造</strong>
-          <ul>
-            <li>福祉サービス収入</li>
-            <li>店舗・生産活動収入</li>
-            <li>利用者関連収入</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="grid">
-
-    <section class="card wide redish" id="overview">
-      <h2><span class="dot red"></span>全体像</h2>
-      <p>NPO法人フラット寺町は、岩手県盛岡市の障害福祉サービス法人です。就労支援、共同生活援助、店舗・生産活動、地域連携を組み合わせて、「働く場所」「暮らす場所」「地域とつながる場所」を持つ複合型の福祉サービス法人として整理できます。</p>
-    </section>
-
-    <section class="card orangeish" id="hq">
-      <h2><span class="dot orange"></span>法人本部</h2>
-      <div class="group">
-        <h3>理事長</h3>
-        <ul>
-          <li>法人全体の統括</li>
-          <li>対外的な代表</li>
-          <li>行政・地域・関係機関との調整</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>理事会</h3>
-        <ul>
-          <li>事業方針</li>
-          <li>予算・決算</li>
-          <li>人事・運営管理</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>監事</h3>
-        <ul>
-          <li>業務監査</li>
-          <li>会計監査</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>事務局</h3>
-        <p>
-          <span class="tag">総務</span>
-          <span class="tag">経理</span>
-          <span class="tag">労務</span>
-          <span class="tag">福祉請求</span>
-          <span class="tag">広報</span>
-          <span class="tag">行政対応</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="card greenish" id="work">
-      <h2><span class="dot green"></span>就労支援部門</h2>
-      <div class="group">
-        <h3>ファーム仁王</h3>
-        <ul>
-          <li>就労継続支援B型</li>
-          <li>雇用契約なし</li>
-          <li>生活リズムの安定</li>
-          <li>作業訓練</li>
-          <li>工賃向上</li>
-          <li>カフェ・食品製造・販売作業と連動</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>ファーム神明町</h3>
-        <ul>
-          <li>就労継続支援A型</li>
-          <li>就労移行支援</li>
-          <li>就労定着支援</li>
-          <li>就労訓練支援</li>
-          <li>一般就労に近い訓練</li>
-          <li>カフェ運営・接客・調理・清掃・販売</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>支援職種</h3>
-        <p>
-          <span class="tag">管理者</span>
-          <span class="tag">サービス管理責任者</span>
-          <span class="tag">生活支援員</span>
-          <span class="tag">職業指導員</span>
-          <span class="tag">就労支援員</span>
-          <span class="tag">目標工賃達成指導員</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="card tealish" id="home">
-      <h2><span class="dot teal"></span>共同生活援助部門</h2>
-      <div class="group">
-        <h3>共同生活援助事業所アイランド</h3>
-        <ul>
-          <li>障がい者グループホーム</li>
-          <li>住まいと生活支援を担当</li>
-          <li>夜間・休日の生活基盤</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>グループホーム</h3>
-        <p>
-          <span class="tag">うぇだぼ小路</span>
-          <span class="tag">ひまわり荘2号館</span>
-          <span class="tag">リバーヒルッジ</span>
-          <span class="tag">グリーンパーク1号館</span>
-          <span class="tag">グリーンパーク2号館</span>
-          <span class="tag">コーポ泉</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>主な支援</h3>
-        <ul>
-          <li>食事</li>
-          <li>服薬確認</li>
-          <li>生活相談</li>
-          <li>掃除・洗濯</li>
-          <li>金銭管理の見守り</li>
-          <li>健康管理</li>
-          <li>日中活動先との連携</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>支援職種</h3>
-        <p>
-          <span class="tag">管理者</span>
-          <span class="tag">サービス管理責任者</span>
-          <span class="tag">世話人</span>
-          <span class="tag">生活支援員</span>
-          <span class="tag">夜間支援員</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="card blueish" id="shop">
-      <h2><span class="dot blue"></span>店舗・生産活動部門</h2>
-      <div class="group">
-        <h3>運営カフェ</h3>
-        <p>
-          <span class="tag">寺町カフェ</span>
-          <span class="tag">三ツ石のおにぎり手形</span>
-          <span class="tag">都カフェ</span>
-          <span class="tag">カフェラウンジフィールド</span>
-          <span class="tag">喫茶さわらび</span>
-          <span class="tag">杜のカフェ</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>施設外就労店舗</h3>
-        <p><span class="tag">ZooCafe TaKeToKu</span></p>
-      </div>
-      <div class="group">
-        <h3>主な作業</h3>
-        <p>
-          <span class="tag">調理</span>
-          <span class="tag">接客</span>
-          <span class="tag">レジ</span>
-          <span class="tag">清掃</span>
-          <span class="tag">菓子製造</span>
-          <span class="tag">コーヒー提供</span>
-          <span class="tag">商品販売</span>
-          <span class="tag">イベント販売</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>役割</h3>
-        <ul>
-          <li>利用者の実践的な就労訓練</li>
-          <li>工賃・賃金の原資づくり</li>
-          <li>地域との接点</li>
-          <li>法人ブランドの発信</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="card pinkish" id="flow">
-      <h2><span class="dot pink"></span>利用者支援の流れ</h2>
-      <div class="group">
-        <h3>相談・利用開始</h3>
-        <p>
-          <span class="tag">本人</span>
-          <span class="tag">家族</span>
-          <span class="tag">相談支援専門員</span>
-          <span class="tag">行政</span>
-          <span class="tag">医療機関</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>日中活動</h3>
-        <p>
-          <span class="tag">ファーム仁王</span>
-          <span class="tag">ファーム神明町</span>
-          <span class="tag">カフェ・食品製造・販売</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>生活支援</h3>
-        <p>
-          <span class="tag">アイランド</span>
-          <span class="tag">各グループホーム</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>ステップアップ</h3>
-        <p>
-          <span class="tag">B型</span>
-          <span class="tag">A型</span>
-          <span class="tag">就労移行</span>
-          <span class="tag">一般就労</span>
-          <span class="tag">就労定着</span>
-          <span class="tag">地域生活の継続</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="card pinkish" id="money">
-      <h2><span class="dot pink"></span>収益構造</h2>
-      <div class="group">
-        <h3>福祉サービス収入</h3>
-        <ul>
-          <li>就労継続支援B型</li>
-          <li>就労継続支援A型</li>
-          <li>就労移行支援</li>
-          <li>就労定着支援</li>
-          <li>就労選択支援</li>
-          <li>共同生活援助</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>店舗・生産活動収入</h3>
-        <ul>
-          <li>カフェ売上</li>
-          <li>菓子販売</li>
-          <li>食品販売</li>
-          <li>コーヒー販売</li>
-          <li>イベント販売</li>
-          <li>施設外就労収入</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>利用者関連収入</h3>
-        <ul>
-          <li>グループホーム家賃相当</li>
-          <li>食費</li>
-          <li>光熱水費</li>
-          <li>その他実費</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="card greenish">
-      <h2><span class="dot green"></span>費用構造</h2>
-      <div class="group">
-        <h3>人件費</h3>
-        <p>
-          <span class="tag">職員給与</span>
-          <span class="tag">社会保険</span>
-          <span class="tag">処遇改善</span>
-          <span class="tag">夜間支援員</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>事業費</h3>
-        <p>
-          <span class="tag">食材費</span>
-          <span class="tag">原材料費</span>
-          <span class="tag">商品仕入</span>
-          <span class="tag">店舗運営費</span>
-          <span class="tag">製造費</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>住居関連費</h3>
-        <p>
-          <span class="tag">家賃</span>
-          <span class="tag">修繕費</span>
-          <span class="tag">水道光熱費</span>
-          <span class="tag">備品費</span>
-          <span class="tag">防災設備</span>
-        </p>
-      </div>
-      <div class="group">
-        <h3>管理費</h3>
-        <p>
-          <span class="tag">事務費</span>
-          <span class="tag">通信費</span>
-          <span class="tag">事務用品</span>
-          <span class="tag">保険料</span>
-          <span class="tag">会計・労務費</span>
-          <span class="tag">広報費</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="card purpleish" id="area">
-      <h2><span class="dot purple"></span>地域連携部門</h2>
-      <div class="group">
-        <h3>地域活動</h3>
-        <ul>
-          <li>町内活動</li>
-          <li>イベント参加</li>
-          <li>商品販売</li>
-          <li>市民活動との連携</li>
-        </ul>
-      </div>
-      <div class="group">
-        <h3>目的</h3>
-        <ul>
-          <li>障がい理解の促進</li>
-          <li>利用者の社会参加</li>
-          <li>地域との交流</li>
-          <li>法人の認知度向上</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="card wide tealish" id="summary">
-      <h2><span class="dot teal"></span>組織のまとめ</h2>
-      <div class="summary">
-        <div><strong>法人本部</strong><br>経営・管理・請求・会計</div>
-        <div><strong>就労支援部門</strong><br>働く力を育てる</div>
-        <div><strong>共同生活援助部門</strong><br>暮らしを支える</div>
-        <div><strong>店舗・生産活動部門</strong><br>実践的な仕事と収益を作る</div>
-        <div><strong>地域連携部門</strong><br>地域とつながる</div>
-      </div>
-      <p class="note">一言でいうと、フラット寺町は、就労支援・住まい・カフェ事業・地域連携を組み合わせた複合型の障害福祉サービス法人です。</p>
-    </section>
-
-  </div>
-</main>
-
-<footer>
-  NPO法人フラット寺町 組織図・マインドマップ / HTML版
-</footer>
+<div class="app">
+<header class="header"><div class="logo" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30" fill="none" stroke="white" stroke-width="2.1" stroke-linecap="round"><path d="M14 15L23 7M14 15L24 23M14 15L5 10M14 15L7 23"/><circle cx="14" cy="15" r="3" fill="white"/><circle cx="24" cy="6" r="3" fill="white"/><circle cx="25" cy="23" r="3" fill="white"/><circle cx="5" cy="9" r="3" fill="white"/><circle cx="7" cy="24" r="3" fill="white"/></svg></div><div class="brand"><div class="eyebrow">NONPROFIT ORGANIZATION · RESEARCH MAP</div><h1>フラット寺町 <span style="color:#8793b0;font-size:12px;font-weight:600">深掘り調査</span></h1><p>公開情報を整理したインタラクティブ・マインドマップ</p></div><div class="header-end"><span class="chip"><i></i> オフライン閲覧対応</span><span class="chip">調査基準日 2026.10.31</span></div></header>
+<nav class="tabsbar" id="tabs" aria-label="調査シート"></nav>
+<div class="tools">
+ <div class="tool-group"><button type="button" id="sidebarBtn" class="tool" title="目次を表示／非表示">☰ 目次</button><button type="button" id="mapBtn" class="tool selected">◎ マップ</button><button type="button" id="outlineBtn" class="tool">☷ 一覧</button></div>
+ <span class="vr"></span>
+ <div class="tool-group"><button type="button" id="collapseBtn" class="tool">枝を閉じる</button><button type="button" id="level2Btn" class="tool">2階層表示</button><button type="button" id="expandBtn" class="tool">すべて開く</button></div>
+ <span class="vr"></span>
+ <label class="searchwrap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15 15 6 6"/></svg><input id="search" type="search" aria-label="項目の検索" placeholder="項目・本文・出典を検索" autocomplete="off"></label><span class="result-count" id="resultCount"></span>
+ <div class="spacer"></div><button type="button" id="fitBtn" class="tool primary" title="全体が収まるように表示">全体表示</button><button type="button" id="printBtn" class="tool" title="一覧形式で印刷">⎙ 印刷</button>
+</div>
+<div class="body">
+ <aside class="sidebar" id="sidebar"><div class="side-top"><div class="side-heading" id="sideTitle">収録項目</div><span class="side-count" id="sideCount"></span></div><div class="side-scroll" id="sideList"></div></aside>
+ <main class="workspace">
+  <div id="viewport" aria-label="マインドマップ。背景をドラッグして移動し、各項目をクリックすると詳細を表示します。"><div class="world" id="world"></div></div>
+  <div class="canvas-top" id="canvasTop"><div class="canvas-caption"><b id="canvasTitle"></b><div>枝の＋で展開 ／ 項目をタップで詳細 ／ ドラッグで移動 ／ ピンチで拡大・縮小</div></div><div class="canvas-label" id="nodeCount"></div></div>
+  <div class="zoom" id="zoom"><button type="button" class="zbtn" id="zoomOut" aria-label="縮小">−</button><div class="zreadout" id="zoomReadout">100%</div><button type="button" class="zbtn" id="zoomIn" aria-label="拡大">＋</button><button type="button" class="zbtn" id="zoomFit" aria-label="全体表示" style="font-size:12px">⤢</button></div>
+  <div class="outline" id="outline"></div>
+ </main>
+ <aside class="detail" id="detail"><div class="detail-header"><h2>項目の詳細・出典</h2><button id="closeDetail" class="close-detail" aria-label="詳細を閉じる">×</button></div><div class="detail-scroll" id="detailScroll"></div></aside>
+ <div id="toast" role="status"></div>
+</div>
+<footer class="footer"><span><strong>フラット寺町 公開資料調査</strong> ─ XMind原稿をHTML化 ／ 調査日現在の情報です</span><span>4シート · 354トピック · ノート・参照リンク収録</span></footer>
+</div>
+<script id="research-data" type="application/json">[{"name":"全体像と事業深掘り","root":{"id":"049145e31d0d4d1d836e7ec3","title":"NPO法人 フラット寺町｜徹底調査 2026.10.31","note":"調査基準日：2026年10月31日（日本時間）。対象は岩手県盛岡市の特定非営利活動法人フラット寺町。\n公式サイト、盛岡市資料、岩手県NPO活動交流センター、2026年日本セルプセンター記事、公式決算PDFを照合。\n[確定]：資料に明記。[当時]：記載された年度・日付の事実であり現在値ではない。[分析]：公開数値からの計算・解釈。[要再確認]：時点差や書類の未確認がある。\n個々の評価は調査上の仮説。団体や特定の個人への不正認定を意味しない。各トピックのノートに原典URLを格納。","labels":[],"href":"","children":[{"id":"e66298b7702f410baf77f527","title":"01｜法人の輪郭と登記","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":[],"href":"","children":[{"id":"698423194fb34260aef82705","title":"正式名称：特定非営利活動法人フラット寺町","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","labels":[],"href":"","children":[]},{"id":"3d3649f683b94acfbf230fae","title":"法人番号：6400005002920","note":"根拠：\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","labels":["確定"],"href":"","children":[]},{"id":"3bb0d0880c22428ba397b7f9","title":"本部：〒020-0015 岩手県盛岡市本町通1丁目12番10号","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","labels":[],"href":"","children":[]},{"id":"934baa9ef4d1462c81f4ce19","title":"代表：理事長 利府 充（2026年確認）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"dd69854802f747f198aa402b","title":"登記日：2010年3月5日（盛岡市2025年一覧）","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":["登記日"],"href":"","children":[]},{"id":"039730bdf63b4183b6be4e95","title":"公式サイトの「設立」：2010年4月／NPOデータベースも2010年4月1日","note":"登記と事業開始の時点が異なる。単純な矛盾ではない。\n\n根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"cc108180743049ce9e5011cc","title":"TEL：019-654-4560／FAX：019-654-4561","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"43eb6c80a07e41bb9a316b53","title":"公式メール：mail@flat-teramachi.or.jp","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"091e10f3cea54210aa3797b8","title":"本部営業時間：8:30〜17:30／休業：日・月・年末年始（法人サイト）","note":"本部情報でありカフェ各店舗の営業時間とは異なる。\n\n根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"e2ae599acaa24a3e942d45f5","title":"団体登録番号：567（県NPO活動交流センター）","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"438a0bedcc034d7db5916352","title":"NPO整理番号：360（県NPO活動交流センター）","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"c5ee2cfa04ae41299a4dabb6","title":"事業拠点：盛岡市中心部〜駅西・三本柳・緑が丘・本宮・津志田など","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html","labels":[],"href":"","children":[]},{"id":"389adf0d062b4d0fbe74f6c1","title":"認定NPO法人であるとの確認は未了（NPO法人と認定NPO法人は別）","note":"根拠：\n【G3】内閣府 NPO法人ポータル（検索入口）\nhttps://www.npo-homepage.go.jp/npoportal/","labels":["要再確認"],"href":"","children":[]}]},{"id":"da23519b49f24f87a09ecda9","title":"02｜理念・目的・支援思想","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[{"id":"7997ae4defc9494da3e52f50","title":"障がいのある人の日中活動と地域生活の場を提供","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"76ef009b262d48cfb06b2dad","title":"本人が本来持つ力を最大限発揮できるよう支援","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"04f2834896ca4693838fcf4c","title":"利用者のニーズ・特性に応じた支援","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"2430c4e8b8134c7ab425966c","title":"衛生・健康・安心安全な製品づくり","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"af64b22d48fe42bea3d6aea8","title":"職員の専門性・キャリアアップ","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"d378d39e2871467ea451372e","title":"関係機関との連携・地域への情報発信","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"9653a94c3ead40279b426f58","title":"定款目的：社会参加の促進＋地域の価値の再発見＋安心して暮らせる地域社会","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"08aab5e1dd8948ec832c5793","title":"障がい福祉と地域の喫茶文化・観光資源を結びつける複合型の事業","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["分析"],"href":"","children":[]},{"id":"cddccb56ffa54d1bb9cd4168","title":"“利用者も店舗の一員”として、得意な工程を活かす協働方式（訪問ルポ）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"45e6edad07dc4cce9329cad1","title":"県データベースの分野と盛岡市一覧の活動分野に分類差あり","note":"県DBは観光・雇用等を掲示。盛岡市の一覧では保健福祉・まちづくりに印。データ種別と対象時点の違いを確認すること。\n\n根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":["資料間差異"],"href":"","children":[]}]},{"id":"ac75e12f57724bad87c71940","title":"03｜事業構造（6種の支援）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[{"id":"720106d3ab3d40249e01d759","title":"ファーム仁王｜就労継続支援B型","note":"","labels":[],"href":"","children":[{"id":"d01fb484c59444b2b831827e","title":"開設：2010年4月／2012年に多機能化／2017年4月B型単独へ","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html","labels":[],"href":"","children":[]},{"id":"03ef895f7b584ed196f2fa1c","title":"法人本部とセントラルキッチン・菓子製造機能","note":"根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"7274da491d974b7b8c447826","title":"B型＝雇用契約なし、働いた作業に応じて工賃","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"02cced793c584f5292d7a877","title":"ホームページに「定員20名」の記述／2026年ルポでは「1日定員30名」","note":"施設定員変更・サイト更新遅れ等の理由を確認するまで現在の定員を断定しない。\n\n根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["更新時点差"],"href":"","children":[]},{"id":"0eadde3aaffe4ccfbecc36bb","title":"カフェ：寺町・三ツ石・蔵・ZooCafé TekuTeku（2026年ルポ）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"dbf5b8aeb4ef41caa9a6918a","title":"てらまち工房：焼き菓子・プリン・ゼリー・受託軽作業・販売","note":"根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]}]},{"id":"a976e808752046199d4db992","title":"ファーム神明町｜複合型","note":"","labels":[],"href":"","children":[{"id":"fd7505e5e3164a6a989167a2","title":"2017年4月開所（就労移行＋A型）","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"35a78133f2b24d0aaa81b94c","title":"A型＝雇用契約に基づく賃金支払い","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"09f2638398c64fe0aeecc7c9","title":"就労移行＝原則2年の一般就労に向けた訓練","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"1bf56977977d4f9e9494eca6","title":"就労定着＝一般就労後の定着支援","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"febbf6e5c249498c9f0a0120","title":"就労選択＝2025年10月1日開始（公式沿革）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"0b60f4836ef044eeb3cf1337","title":"2017年開所時の定員：A型10名＋移行10名（その後の変更可能性あり）","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"c47e45b79fe340cb9139f7aa","title":"2024年度のA型経営改善計画書：職員4名・定員14名・利用者9名（書類上）","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":["2024年計画書"],"href":"","children":[]},{"id":"2bd5c3a4f50847f189c9f4e4","title":"就労移行：カフェラウンジフィールド、喫茶さわらび","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"64dede6ec985498db30422d8","title":"A型：杜のカフェ（アイーナ4F）","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"e23189b942004551a53ad197","title":"神明町7-5 パルソビル1F／019-681-7913","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"db5a580f2f4b4832801bef30","title":"A型の事務所：アイーナ4F／019-681-1103","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]}]},{"id":"e7ef2da46a014f3c90805cfb","title":"アイランド｜共同生活援助","note":"","labels":[],"href":"","children":[{"id":"9b9f7aac214a4dc1ac63d1c2","title":"2012年8月にサービス開始","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"d74fdfd747a04aa68648f486","title":"地域での住まい：食事・日常生活・相談支援","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"e1625f6f389a4901a8e9eaf8","title":"世話人・生活支援員・サービス管理責任者等が支援","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"81fa8b1fb46848a0adc3c69b","title":"6棟／合計41名定員（2026年10月サイト掲載）","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"42395f675c5b406584a420c2","title":"居室：全室6畳・エアコン・収納／共有水回り・食堂","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"987042f45982493ab3c01ccd","title":"食事：朝夕提供／夕食の時間帯はホームごとに異なる","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"bb743e7375bb4a36af15c6a9","title":"入居前の体験：2泊3日以上／受け入れ審査あり","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"a7f9a2101ee942568b9ecca4","title":"費用：家賃・食費・光熱費など合計で月約6万円（公式目安）","note":"個別契約や実費・補助等によって変わる。現在の請求額を確約する数値ではない。\n\n根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":["参考額"],"href":"","children":[]},{"id":"88d9b598aaa642c08ec800dc","title":"利用に際し日中活動が必要とされる（法人の案内）","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"381bb1aa252e47e4b6d84ec0","title":"住所：盛岡市上田3-3-60／TEL：019-659-0215","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]}]}]},{"id":"4f54aa4a12fc49ae85c35227","title":"04｜カフェ7拠点と生産ネットワーク","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[{"id":"52f81ad9b4fa4de0be13e5cf","title":"B型グループ：4カ所（2026年ルポ）","note":"","labels":[],"href":"","children":[{"id":"e27816bfd85547f6bf41aa15","title":"寺町カフェ：本町通1-14-17／019-613-2602","note":"根拠：\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html","labels":[],"href":"","children":[]},{"id":"8d5940d3cbbb43b6bada25b8","title":"三ツ石のおに手形：名須川町27-42 白楊ビル1F／019-601-5747","note":"根拠：\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html","labels":[],"href":"","children":[]},{"id":"ee09c4076a624918bb8e6adb","title":"蔵カフェ：三本柳12地割20-2／珈琲・調理","note":"根拠：\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"e3deb9591a3b41edb4f5ac6e","title":"ZooCafé TekuTeku：盛岡市動物公園内の拠点","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]}]},{"id":"c713074195c044869a695dee","title":"神明町グループ：3カ所","note":"","labels":[],"href":"","children":[{"id":"b0efab79e6094eec96ca5e60","title":"杜のカフェ：盛岡駅西のアイーナ4階／A型","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"2b3186401c9c4e6db816317d","title":"カフェラウンジ フィールド：神明町／就労移行","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]},{"id":"87b3be02d9ca4cf694d55be6","title":"喫茶さわらび：総合福祉センター内／就労移行の施設外就労","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]}]},{"id":"2dfa4cc6a05e4645b2be3117","title":"商品と作業の分解","note":"","labels":[],"href":"","children":[{"id":"6d7a9fd5ff9b4a0487efb67e","title":"珈琲：生豆選別→焙煎→再選別→抽出・販売","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"0b4c6f6fccec47ce9a50d87c","title":"焼き菓子・スイーツ：チーズケーキ、シフォン、クッキー、焼きドーナツ","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"32e903b70c8d422e929fd3b5","title":"惣菜・仕出し・弁当：ファーム仁王の調理機能","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"e64556119c5f40ab8c52def5","title":"ハンバーグ：岩手山ろく漢方和牛を使用（紹介記事）","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"1e86daf63ece48de8e2ae7c5","title":"製造集中・販売分散：セントラルキッチン→カフェ各店＋イベント","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["分析"],"href":"","children":[]},{"id":"23db8abcbb02409a923e17b1","title":"作業を工程分解し、多様な利用者の強みを活かす","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]}]},{"id":"6abb907298f64b00bb6ff95f","title":"法人トップは「直営6＋施設外就労1」の計7店舗と説明","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":[],"href":"","children":[]},{"id":"f8398ec439c14ac39cd5071b","title":"県NPOデータベースに「カフェ4店舗」と残るが時点差がある","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":["更新時点差"],"href":"","children":[]},{"id":"c6fd1befad0d4e1e9cd0c4ad","title":"各店舗の営業時間・休業日は現行ページと直接確認が必要","note":"根拠：\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html","labels":["要再確認"],"href":"","children":[]}]},{"id":"cb79d2c916054547b16cae27","title":"05｜地域貢献・協働・地域性","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[{"id":"8676158534ef433eb663dd80","title":"盛岡・北山寺町の町づくり、町内活動・イベントに参画","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"7b4d97a4cd6a48e6ad66b0b9","title":"県庁・市役所・特別支援学校等の催事販売","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"200b4cb2b4f44eae8a97db20","title":"一般企業と共同開発した菓子の製造販売","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"8bfab58bb4e4473385f56aa0","title":"アイーナ内カフェ：駅西エリアの来館者・観光客の需要","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"d449c0fa40854ef6a4db5ebd","title":"ZooCafé TekuTeku：動物園の来園者との接点","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"a42556cdb6ab4a058ba12eee","title":"福祉利用者が客前で提供し接客・会計まで担う","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"ffa03d31e0b0481a8a431156","title":"地域のお客の理解と雇用機会の拡大を両立する構造","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["分析"],"href":"","children":[]},{"id":"a040af5e615f43a393eb2d46","title":"地域連携活動：A型スコア表で10点（2025年度実績）","note":"根拠：\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","labels":[],"href":"","children":[]},{"id":"57fcda68ee924fdd9bc3beed","title":"公式サイトは芳心会の助成を受け作成されたとの記載","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"","children":[]}]},{"id":"2afe4dd4db7945f7bcaf8e8a","title":"06｜利用者の実績・工賃・就職","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[{"id":"101bd49ad53a4da2b4228d7f","title":"2026年ルポ：B型ファーム仁王の登録者38名／1日定員30名","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["取材時点"],"href":"","children":[]},{"id":"31763a3391ac44ed887fd339","title":"2026年ルポ：B型月額平均工賃 約31,000円（2024年度実績）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"53447885517d465bbccb9b7b","title":"比較値：岩手県のB型平均 26,017円（同記事記載）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"d6d685270bf147f5916c848e","title":"差：約4,983円／県平均比 約19.2%高い（資料上の比較）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["計算"],"href":"","children":[]},{"id":"0711dc8a127449519757356d","title":"2026年ルポ：就労移行の利用者6名、一般就労への移行例あり","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["取材時点"],"href":"","children":[]},{"id":"a5abe2155edf48ccb96ea6c9","title":"離職がほとんどないとの記述は記事・取材先の説明／独立監査の結果ではない","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["評価上の限界"],"href":"","children":[]},{"id":"36d1f5001c4a4ddeb69c018f","title":"2025年度 団体活動報告書は「障がいを持った方90名が活動」と記載","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":["2025年度"],"href":"","children":[]},{"id":"32787769de3e4475b7cdf08b","title":"公式決算書の利用者賃金総額：9,277,212円（2024年度法人全体）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"65d62c9049db4bd2969d17fd","title":"公式決算書の利用者工賃総額：8,533,885円（2024年度法人全体）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"20c6db83d45b4dc4a2528308","title":"上記の賃金・工賃は性質が異なるため単純平均・合算平均に注意","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["分析"],"href":"","children":[]},{"id":"820d73fb0308452f8a35d19f","title":"A型利用者賃金を一律に約89,112円と断定しない：記事の同数値は県平均値として記載","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["誤読防止"],"href":"","children":[]}]},{"id":"4156d0644ed14ec4ad4a25db","title":"07｜グループホーム6棟・所在地","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[{"id":"ab36c831ef0c4cd4809f6fb6","title":"うえだ新小路｜男性7人｜盛岡市上田3-3-60","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"41fa0a2a1ea84a8cabbe18a6","title":"ひまわり荘2号館｜男性7人｜盛岡市本宮6-28-43","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"9b14964311bd40e8957c34e3","title":"リバービレッジ｜男性7人｜盛岡市津志田町1-12-1","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"adce3e35a8ec4eef928d942c","title":"グリーンパーク1号館｜男性7人｜盛岡市緑が丘1-6-28","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"b17f9a79b717485796d0e3f5","title":"グリーンパーク2号館｜男性7人｜盛岡市緑が丘1-6-27","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"49c9828129494be1ab01f309","title":"コーポ泉｜女性6人｜盛岡市本町通1-14-17","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"ad4528270e944f5a85bc028b","title":"2025年4月：ひまわり荘の移転・うえだ新小路への改称","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"b2c315c4c7fe4b279f2bfba0","title":"2026年10月7日付の空き室数：0／1／3／1／0／0（施設掲載順）","note":"調査当日の空室状況は保証しない。上記の順番で各ホームに対応。\n\n根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":["日付限定"],"href":"","children":[]},{"id":"9a3c44ea48c241df859af3ad","title":"グループホーム家賃総額ではなく法人決算の地代家賃計上に留意","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["会計"],"href":"","children":[]}]},{"id":"0db6a6e728914fc6975a3800","title":"08｜組織・経営・ガバナンス","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[{"id":"baa3b993226f493ab5139fd5","title":"理事長：利府充（法人公式と2026年取材）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"150b29c3d5a54fd6819956f0","title":"ファーム仁王 管理者：佐藤敏昭さん（2026年訪問ルポ）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["取材時点"],"href":"","children":[]},{"id":"9cccd2bf317643c4a98ffaab","title":"ファーム神明町 管理者：伊藤大助さん（経営改善書類）","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":["書類時点"],"href":"","children":[]},{"id":"b356371acf0a464988f74a97","title":"県NPO登録：会員20名、年会費2,000円（2026年7月30日更新）","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"4014ae4f7ca34d0dbb5ca59f","title":"県NPO登録：スタッフ数各欄0名は事業の無人運営を意味しない","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["掲載項目の解釈"],"href":"","children":[]},{"id":"12d0901a3812421faff38d65","title":"2024年度：役員報酬 3,769,200円（法人計）","note":"複数部門に計上されている。個人別支払額を意味しない。\n\n根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"350181ce23da4c0e842790f0","title":"2024年度：役員借入金 3,210,000円（理事長からの長期借入）","note":"貸借対照表と関連当事者注記の記載。資金提供自体を不適切と解釈しない。\n\n根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"7f32e46bad1946c997830ba2","title":"2024年度：役員・近親者関連取引の開示欄に長期借入金321万円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"806fe4ce6c1648baa914468f","title":"2025年度：定時総会（6/25）・役職員研修（8/6・11/20）の活動報告","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"3737b0126c664b1885d185e3","title":"職員研修：虐待・身体拘束防止／感染症・食中毒防止（活動報告）","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"5839973497ec4611a8b314a6","title":"定款・理事監事名簿・総会議事録の現行版までは今回未取得","note":"","labels":["資料未取得"],"href":"","children":[]},{"id":"0b80d709e0584f32bd219eca","title":"法人役員の交代・任期については法務登記等と相互確認が必要","note":"","labels":["要再確認"],"href":"","children":[]}]},{"id":"17452e2686a645fd963ed2ac","title":"09｜運営上の強み・課題（分析）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","labels":[],"href":"","children":[{"id":"c80e18bbe9ff4606b0258ce9","title":"強み","note":"","labels":[],"href":"","children":[{"id":"d1abab5e86e147179bd77e6a","title":"カフェ多拠点で職場訓練と地域接点を創出","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"3ee93b63dccf401f8275f0a7","title":"工程分業で個別適性に配慮した役割設計","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"1f3720c8565347c89d5173d4","title":"自家焙煎コーヒー・スイーツによる商品差別化","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"5c456d28e3df464a8c1e84a4","title":"生産拠点集中・販売チャネル分散","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["分析"],"href":"","children":[]},{"id":"69a8cf7395d5438bbb08b688","title":"B型平均工賃が県平均を上回る（取材記事の2024年度実績）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]}]},{"id":"888d8f4b9b9a4be884b36af7","title":"経営課題（外部取材での指摘）","note":"","labels":[],"href":"","children":[{"id":"512cfea1d1ec45bf8f14dd73","title":"すべて賃貸の小規模カフェ多店舗展開→地代家賃負担","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"b7a0ae0b4bab4fad93d1f9d0","title":"将来の集約・自前拠点の検討可能性（記事の示唆・未決定）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["構想・未決定"],"href":"","children":[]},{"id":"177fd8545c1f444eb9ada2c2","title":"店舗多拠点には移動・教育・在庫・管理工数の負荷もありうる","note":"","labels":["分析・仮説"],"href":"","children":[]},{"id":"b1a69f3ef76740ccb2ccebe7","title":"施設数増加と利用者の選択肢維持がトレードオフ","note":"","labels":["分析・仮説"],"href":"","children":[]}]},{"id":"fe5598a1807c4c319d002b2d","title":"法人2024年度決算からの論点","note":"","labels":[],"href":"","children":[{"id":"6c5282db036f4acd967fc728","title":"法人全体の当期正味財産増減額＋654,346円／収益比0.33%","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]},{"id":"90c2f78248394166aab9fd71","title":"地代家賃19,306,800円／経常収益比9.60%","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]},{"id":"40ea5d05803043078a5b8d75","title":"部門別で黒字・赤字の差がある→支援サービス全体で見る必要","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["分析"],"href":"","children":[]},{"id":"3b59953f2da34315bb66092d","title":"売上はカフェ収入だけでなく福祉給付・利用者負担を含む","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["会計の注意"],"href":"","children":[]}]},{"id":"682cccd5696644e6af477f78","title":"経営改善の事実と限界","note":"","labels":[],"href":"","children":[{"id":"92ac45b3815f4232a65231d6","title":"A型の2024年度経営改善計画書を公式公開","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]},{"id":"d67f540e65714cfa9deb93e5","title":"前年度：収入 12,179,397円／賃金以外経費 5,495,293円","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]},{"id":"acde57f3958040c5997e6979","title":"前年度：生産活動収支 6,684,104円／利用者賃金 10,040,180円","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]},{"id":"fb051240edc5416fac3b4190","title":"改善計画：販路拡大・受託作業増・イベント販売・価格改定","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]},{"id":"8ed40fc9440340769390b203","title":"計画目標：収入14,520,000円／賃金以外経費5,534,000円","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]},{"id":"867c539e755b44b99d8c5bcc","title":"計画書は当時の課題と改善方針を示す。2026年現在の未達を証明しない","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":["時点注意"],"href":"","children":[]},{"id":"805de0fa7b58405e953a1f0c","title":"2025年度A型スコア表：135点／200点（公式公開の書面）","note":"根拠：\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","labels":[],"href":"","children":[]}]}]},{"id":"37d0216fe0c64c7cb2cb4ea3","title":"10｜最新活動（2025年度報告／2026年取材）","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[{"id":"be4a4d98a7fc43fabcf4b2e0","title":"2025年度：A型・B型・移行・定着・選択・グループホームの実施","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"328920edd867407e8e6102ff","title":"2025年度：地域イベント参加・障がい福祉関係機関連絡調整会議","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"8ba659b0477d4f31b94b8415","title":"2025-06-25：通常総会（団体活動室2）","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"a94d5f7829f343d3a4d79566","title":"2025-08-06：役職員研修会（虐待・身体拘束防止）","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"60f7568c8bf0436493b4bf02","title":"2025-11-20：内部職員研修会（感染症・食中毒防止）","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"da4a265519424eaea48bd8b3","title":"2026-06-09：日本セルプセンターが訪問ルポを公開","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"b59ed9e54e024106ae303c0e","title":"2026-07-08：公式HPでA型情報開示更新を告知","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":[],"href":"","children":[]},{"id":"8c48a9741f55406f94c266b1","title":"2026-07-30：県NPO活動交流センター登録情報更新","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"cf617173d56c4c17b7a4a7b0","title":"2026-10-07：アイランドの空き室数の基準日","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]}]},{"id":"af12873b37e34aa8b3b37168","title":"11｜公開情報の差異と監査の観点","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[{"id":"2df521d9692f45e5b7ba4d77","title":"設立日：登記2010-03-05／事業開始2010-04-01（区別）","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"aa30d73250a948ffb14d8ad3","title":"2026年ルポ「2011年設立以来」と書くが市資料は2010年登記","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":["資料間差異"],"href":"","children":[]},{"id":"c8d0334ef06541cc8d405aee","title":"ファーム仁王定員：公式の20名とルポ30名は対象・更新時点を確認","note":"根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["要照合"],"href":"","children":[]},{"id":"e5b78c5443cd491c95dd1136","title":"カフェ4店舗の旧登録文と2026年7店舗記述は時点差","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":["要照合"],"href":"","children":[]},{"id":"4be633a930514185b30f5f7b","title":"ホームページ沿革「てらまち工房2号館」の日付に2010年4月の不自然な配置","note":"2017年項目の直後に2010年4月と記載。公式の誤植か創業当時からの施設か確認。\n\n根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":["要照合"],"href":"","children":[]},{"id":"31e17642e3a9497287cbddc7","title":"A型職員・利用者数の計画書は2024年度のもので最新人員ではない","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]},{"id":"62d51df4a4e24beeaf8466d5","title":"県NPO登録スタッフ0名は記載・集計方法を確認すべき値","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"f49dff387c344d168acb126c","title":"GH空室数は2026-10-07当時のスナップショット","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"2e343937df76426996e68cf3","title":"法人公式の2024年度決算より新しい「法人全体の決算」は今回確認できず","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":["調査の限界"],"href":"","children":[]},{"id":"e1d2f6f07cc340d999120e9b","title":"内閣府NPOポータルの法人詳細・定款・役員名簿を今回直接取得できず","note":"根拠：\n【G3】内閣府 NPO法人ポータル（検索入口）\nhttps://www.npo-homepage.go.jp/npoportal/","labels":["資料未取得"],"href":"","children":[]},{"id":"417bbbdd756543f7a37974b0","title":"行政処分・監査の有無は検索非ヒットだけでは無いと断定できない","note":"","labels":["断定禁止"],"href":"","children":[]}]},{"id":"8e00d93197d842688c76a1c4","title":"12｜追加調査・ヒアリング課題","note":"質問案のため、ここに記載した事象が起きていることを示唆しない。","labels":[],"href":"","children":[{"id":"837f1063c52043a280bee381","title":"① 最新の定款、設立認証年月日、役員一覧、役員任期を所轄庁で照合","note":"","labels":[],"href":"","children":[]},{"id":"4e5d646d9426417690dd3b61","title":"② 2025年度（令和7年度）の法人全体決算が公開済みか確認","note":"","labels":[],"href":"","children":[]},{"id":"3ba04b4239534d6481dd3423","title":"③ B型の2025年度平均工賃・稼働率・就労者数を確認","note":"","labels":[],"href":"","children":[]},{"id":"0524d337630746b2a9f312cc","title":"④ A型の生産活動収支・利用者賃金の改善状況を確認","note":"","labels":[],"href":"","children":[]},{"id":"672d619b39ef4d139972f5e5","title":"⑤ 7カフェの採算・収益・客単価・家賃の比較","note":"","labels":[],"href":"","children":[]},{"id":"f844d69b51f14a0697bd5f9d","title":"⑥ グループホーム6棟の稼働率と職員配置状況を確認","note":"","labels":[],"href":"","children":[]},{"id":"165ea24bac0649ae96b96fdd","title":"⑦ 集約構想の進捗・現在の店舗別契約状況","note":"","labels":[],"href":"","children":[]},{"id":"6e9b9206fe4243b69ea60b54","title":"⑧ 理事会・監事・第三者評価・苦情処理の公開状況","note":"","labels":[],"href":"","children":[]},{"id":"a3b80ca9bea34772860bbe9f","title":"⑨ 工程分業と障がい特性別支援の評価方法","note":"","labels":[],"href":"","children":[]},{"id":"9d9ce917c9a944e3be229f38","title":"⑩ 地域連携先との実際の共同企画や効果測定","note":"","labels":[],"href":"","children":[]},{"id":"53c529d0f9c842d0923b83ac","title":"⑪ 地域住民・利用者・家族からの多面的な評価を調べる","note":"","labels":[],"href":"","children":[]}]},{"id":"909d90aa6ae94a4bac1b238f","title":"13｜主要原典へジャンプ","note":"","labels":[],"href":"","children":[{"id":"b8b5d9fd7f4c4c1389c14c5d","title":"[F1] 法人公式：概要・理念・沿革","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"https://www.flat-teramachi.or.jp/about.html","children":[]},{"id":"18c3bab2c8984dd2b2c6b37c","title":"[F2] 法人公式：トップ／新着情報","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":[],"href":"https://www.flat-teramachi.or.jp/","children":[]},{"id":"39ad300a921d4627b1303a9f","title":"[F3] 法人公式：ファーム仁王（B型）","note":"根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html","labels":[],"href":"https://www.flat-teramachi.or.jp/nio.html","children":[]},{"id":"a72a4ec1bdf049888605e958","title":"[F4] 法人公式：ファーム神明町（A型ほか）","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"https://www.flat-teramachi.or.jp/shinmeicho.html","children":[]},{"id":"e8a18d3e71334ce3950a4262","title":"[F5] 法人公式：アイランド／グループホーム","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"https://www.flat-teramachi.or.jp/island.html","children":[]},{"id":"af57a48eb451495dad3a02b6","title":"[F6] 法人公式：拠点のアクセス・店舗","note":"根拠：\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html","labels":[],"href":"https://www.flat-teramachi.or.jp/access.html","children":[]},{"id":"5f97a51042444caba42f667b","title":"[F7] 法人公式：2024年度（令和6年度）決算報告書","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","children":[]},{"id":"dbefe3c6c485484f873b659c","title":"[F8] 法人公式：A型経営改善計画書（2024年度の計画）","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","children":[]},{"id":"1e68e211836840609353aca4","title":"[F9] 法人公式：A型スコア表（2025年度実績）","note":"根拠：\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","children":[]},{"id":"e229cdd42c4e4aa38dc71672","title":"[A1] 岩手県NPO活動交流センター：団体データベース（2026-07-30更新）","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"https://www.aiinanpo.org/npodb/567/","children":[]},{"id":"3a32747356884bfc8bce89c4","title":"[A2] 岩手県NPO活動交流センター：2025年度 団体活動報告書","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"https://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","children":[]},{"id":"e841c57bb7284e16b0073065","title":"[G1] Gビズインフォ：法人番号・住所","note":"根拠：\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","labels":[],"href":"https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","children":[]},{"id":"984f6d930f7a4ac39f35e4eb","title":"[G2] 盛岡市：所管NPO法人一覧（2025-12-23時点）","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":[],"href":"https://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","children":[]},{"id":"5c460eb1d78c489da8fc803a","title":"[R1] 日本セルプセンター：訪問ルポ（2026-06-09公開）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"https://selpjapan.net/selp_repo/teramachi/","children":[]},{"id":"749b2791262e43d7a04c5bfa","title":"[R2] 福祉インフォ：ファーム神明町 就労選択支援（事業者概要の再掲）","note":"根拠：\n【R2】福祉インフォ：ファーム神明町 就労選択支援（事業者概要の再掲）\nhttps://fukushi.info/iwate/moriokashi/shuro-sentaku/0310102751_43","labels":[],"href":"https://fukushi.info/iwate/moriokashi/shuro-sentaku/0310102751_43","children":[]},{"id":"bac13813cbf844398aafaa79","title":"[G3] 内閣府 NPO法人ポータル（検索入口）","note":"根拠：\n【G3】内閣府 NPO法人ポータル（検索入口）\nhttps://www.npo-homepage.go.jp/npoportal/","labels":[],"href":"https://www.npo-homepage.go.jp/npoportal/","children":[]}]}]}},{"name":"財務・部門別損益","root":{"id":"ad062d4eda5e4122b1b5dcc0","title":"財務分析｜2024年度決算の読み解き","note":"金額は公式の第16期決算書、2024年4月1日〜2025年3月31日、単位は日本円。法人全体と就労支援の生産活動を区別。事業部門別会計に内部取引を含むとの注記あり。","labels":[],"href":"","children":[{"id":"a059bd82295f4e37b33a7cea","title":"法人全体｜損益（FY2024）","note":"","labels":[],"href":"","children":[{"id":"25ea1f4e43e7443cbebca375","title":"経常収益：201,120,400円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"4444b58476cf4413ba9a0cdd","title":"経常費用：200,255,754円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"76430497ed2a4b33920eaf9a","title":"経常増減額：＋864,646円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"4fe5e914621643e5a0780b76","title":"経常外収益：＋128,900円（貸倒引当金戻入）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"e7231423659e4ca1916bf03c","title":"税引前の正味財産増減：＋993,546円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"e445c8e9756d48ef83902f9e","title":"法人税・住民税・事業税：339,200円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"01a2d14659534ebd8a48c9f7","title":"当期正味財産増減：＋654,346円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"fe3d9d83d10f4c689d760bb4","title":"経常収益比の当期増加率：0.325%（単純計算）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]}]},{"id":"bbf982b7f779456b97c1c953","title":"収益構成｜全体の約2.01億円","note":"","labels":[],"href":"","children":[{"id":"7aa50f20049b446290d8b44d","title":"福祉給付関連：117,868,472円（決算の「自主支援給付受取収益」と表記）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"8772ed1b6f4947bab3fa7b7a","title":"利用者負担金収益：25,984,899円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"97d66a48be1145a8be832d51","title":"特定障害者特別給付費収益：4,266,000円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"df7e0bb6de19431cb8077381","title":"就労支援事業収益：47,424,918円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"016f0dbf85a9474c82effc49","title":"受取助成金等：5,129,781円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"fd0f45d432e24ad2a592476d","title":"受取会費：86,000円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"ddaa9283926e42c2adf98274","title":"受取寄付金：0円（この会計期間）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"a6d3a340e6434b568ab4aafe","title":"その他収益：360,330円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"fcf188a0b58b4d35a3d2b9cd","title":"就労支援事業収益の経常収益比：約23.6%","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]},{"id":"875b7dba62534a7b806a3fa8","title":"福祉給付・利用者負担とカフェ売上を同一の「飲食売上」と扱わない","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["重要"],"href":"","children":[]}]},{"id":"72ac4179300141519a76b8f5","title":"費用構造","note":"","labels":[],"href":"","children":[{"id":"b0fdf4e0fc0140f8b19628a0","title":"事業人件費：95,884,774円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"c13b0cf689604db0ad343a56","title":"うち給料手当：79,920,777円／役員報酬：3,769,200円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"7e4692629ae846eea33d337b","title":"利用者賃金：9,277,212円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"efed2df902394f2d8f299982","title":"利用者工賃：8,533,885円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"b676726da90f42e2b4728f3b","title":"就労支援事業活動費用：47,546,347円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"bd76802e37734d93b3617db8","title":"地代家賃：19,306,800円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"055b2abb174e4dda9e6b829a","title":"GH部分の地代家賃：15,336,000円（部門別開示）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"07f250bfc0184dea8b5c2017","title":"水道光熱費：5,949,805円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"33776e636b92423b8e60c7b0","title":"給食費：10,815,690円（主にアイランド部門）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"bd989636370142aabe9e3a7c","title":"管理費：1,920,814円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"d5513c0943d74699b85a06b1","title":"地代家賃の経常収益比：9.60%","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]}]},{"id":"1ca863fa99c94a7784b0736c","title":"部門別損益｜注記は内部取引あり","note":"","labels":[],"href":"","children":[{"id":"3220a0bf56e54ba0862cc7ea","title":"ファーム仁王｜収益82,081,220円／経常増減 −641,209円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"a0b3a24bad8a428a82e0f730","title":"ファーム神明町｜収益54,927,766円／経常増減 ＋5,977,225円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"3fdef2831dcb4d27aeb21169","title":"アイランド｜収益63,435,934円／経常増減 −3,226,036円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"8e9e7f8d67754a9ab076e10c","title":"本部｜収益675,480円／経常増減 −1,245,334円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"40065ef13c394363a43d35ea","title":"内部取引を含む事業別損益のため、各店舗の独立採算と同一視しない","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["要注意"],"href":"","children":[]},{"id":"676c8f81b8d64fb1a3c896a3","title":"部門別の業績差は事業を継続する価値や支援の質を直接示さない","note":"","labels":["分析"],"href":"","children":[]}]},{"id":"335d8c8ab0d145038d940bf9","title":"貸借対照表｜2025-03-31","note":"","labels":[],"href":"","children":[{"id":"a58250152aba4cbaad8999e9","title":"資産：59,097,483円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"0f1a5e92c8ee451a9708d3e7","title":"負債：25,767,534円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"69e35c15dfa4471a8efe47c7","title":"正味財産：33,329,949円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"5a6a8e8279114621bf05f47e","title":"現預金：20,640,197円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"218dd93ac58745638ceb3988","title":"流動資産：43,210,747円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"cd6907a67f7049aaa5d0789f","title":"流動負債：13,089,355円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"357f91fa129a40b6a89197ec","title":"固定資産：15,886,736円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"2a13132ddc214119b3614cdf","title":"固定負債：12,678,179円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"5efa87b8bca341909d40add1","title":"長期借入金：3,210,000円（理事長からの役員借入金）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"88049d860b3c444c9423ea7d","title":"退職共済預け金：7,310,137円／退職給付引当金：同額","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"b5f7cf94b2224a9d9e03a1f0","title":"正味財産比率：約56.4%","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]},{"id":"8805a94467994f9c93b2807b","title":"流動比率：約330%","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]},{"id":"97b80317a4cc4d2390f72d55","title":"資産＝負債＋正味財産（59,097,483＝25,767,534＋33,329,949）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["整合確認"],"href":"","children":[]}]},{"id":"983bfbb8ce004f098bd8ae66","title":"就労支援事業だけの生産活動：原価と賃金","note":"","labels":[],"href":"","children":[{"id":"e63e0f80f4c94cf68a37923b","title":"就労支援事業収益：47,424,918円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"cc07f7fe988d4a0fbd0a97fb","title":"就労支援事業活動費用：47,546,347円","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"9873133aaab34cf3af2ad55b","title":"差額：−121,429円（収益−活動費用の単純差）","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["計算"],"href":"","children":[]},{"id":"fce9014ccea9402287c784b6","title":"利用者賃金と工賃は「就労支援事業活動費用」の内訳に含まれる","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"a5a215410faa4cca84919c12","title":"A型改善計画の数値は部門別・年度別で別の集計：同一視しない","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"","children":[]}]},{"id":"ec96009a2fd24c6db4bba0af","title":"外部ルポのB型販売実績｜2024年度として紹介","note":"","labels":[],"href":"","children":[{"id":"01acc8ae21a74405bef8cf12","title":"仕出し弁当・軽作業 約230万円","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"3e4daa8b7c6e4ae08294c5aa","title":"寺町カフェ（菓子） 約300万円","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"2064d739387d4c10b3092c70","title":"蔵・三ツ石（珈琲） 約450万円","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"85fd9202c07a42c5bd792993","title":"ZooCafé TekuTeku 約930万円","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"4edfd56c4502413f9c00d177","title":"イベント販売 約920万円","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"b4cda41372114fb59c3217d2","title":"合計 約2,830万円（記事記載のB型店舗等の販売実績）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"79d0bb0481444eda981bb05b","title":"法人会計の就労支援事業売上4,742万円とは集計範囲が異なる","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["誤読防止"],"href":"","children":[]}]},{"id":"a647f3207a0041b9bb67f47c","title":"財務から考える論点（仮説）","note":"","labels":[],"href":"","children":[{"id":"b53eb23bfacd49a5bce82ca6","title":"拠点集約と通所利便性の両立","note":"","labels":["検討仮説"],"href":"","children":[]},{"id":"e03d14f2590844cb9e0f6c15","title":"賃貸料の固定費と各店舗の役割の再評価","note":"","labels":["検討仮説"],"href":"","children":[]},{"id":"da1a7009aecc44188c4286ef","title":"多店舗のまま事務・購買・在庫を共通化する余地","note":"","labels":["検討仮説"],"href":"","children":[]},{"id":"33f1fcee0abb4e378aafa1e7","title":"給付収益・カフェ販売・補助収益の各々の安定性を分けて見る","note":"","labels":["検討仮説"],"href":"","children":[]},{"id":"f7a1b65e756b487a938ab994","title":"黒字部門のみを評価するのではなく支援成果と費用を併せて見る","note":"","labels":["検討仮説"],"href":"","children":[]}]},{"id":"a3d77c60dd8244fa8c57bede","title":"会計原典","note":"","labels":[],"href":"","children":[{"id":"afd091db5c3b400bb1c8d276","title":"[F7] 法人公式：2024年度（令和6年度）決算報告書","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","children":[]},{"id":"436ebc53aff84e0d89708f3e","title":"[F8] 法人公式：A型経営改善計画書（2024年度の計画）","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","children":[]},{"id":"5948d14e7e034a7eb41f46f9","title":"[F9] 法人公式：A型スコア表（2025年度実績）","note":"根拠：\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","children":[]},{"id":"3f7f8ef3ca464941bcc99066","title":"[R1] 日本セルプセンター：訪問ルポ（2026-06-09公開）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"https://selpjapan.net/selp_repo/teramachi/","children":[]}]}]}},{"name":"年表","root":{"id":"938eda6daa9c41f4a024cfc2","title":"年表｜設立から2026年まで","note":"実際の登記日、法人公式沿革、取材記事、活動報告の記載を区別。開業・移転・変更の時点は各資料記載どおり。","labels":[],"href":"","children":[{"id":"0dee5c017d724ccebba05acb","title":"2010〜2012｜創業・開始","note":"","labels":[],"href":"","children":[{"id":"856522054ec745f69f5be566","title":"2010-03-05：登記（盛岡市所管法人一覧）","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":[],"href":"","children":[]},{"id":"2b80354a9e654e87a2a4bd9b","title":"2010-04：法人設立・ファーム仁王B型開始（公式沿革）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"d396aa87af7942c0a7e33746","title":"2010-07：寺町カフェ開店","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"aef1e6c1741e4d1f81bd9143","title":"2011-02：杜のカフェ開店（アイーナ）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"3e37c935c17a4e4da81573f2","title":"2012-06：就労移行「フィールド」・カフェラウンジ開店／仁王多機能化","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"1aff8d4d46a34e228a163b74","title":"2012-08：共同生活援助アイランド、ひまわり荘、コーポ泉","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"2716fb4ee5e04418be51e891","title":"2012-12：リバービレッジ","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]}]},{"id":"4a81c61d68cb4d5c854b50ae","title":"2013〜2018｜拡張・多機能化","note":"","labels":[],"href":"","children":[{"id":"f67a6f82daaf4a9daa30ab8c","title":"2013-02：寺町カフェ移転","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"7347325fcff04d9482b0e6f6","title":"2015-03：グリーンパーク1・2号館","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"bcd3d0d7b73e4932bad57a00","title":"2015-05：三ツ石のおに手形開業","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"1a514d4ee9be47e5a7b211d6","title":"2017-04：仁王をB型単独化／ファーム神明町開所","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"cf741833c54c41d08ad5affa","title":"2017-04：てらまち工房（公式沿革）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"540dbd030f6e482b9a921d7d","title":"2018-10：ファーム神明町で就労定着支援開始","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"b53d288e12fd46b09ca3da66","title":"注：てらまち工房2号館の日付に沿革内の不自然な表記","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":["要再確認"],"href":"","children":[]}]},{"id":"e82bcc2150fe4cdaa746b6aa","title":"2020〜2024｜住まい・店舗","note":"","labels":[],"href":"","children":[{"id":"ae3902d7be9c4ec38efd6f5f","title":"2020-01：ひまわり荘2号館開始","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"d2edc3ccccae41acbb1ec8aa","title":"2021-09：蔵カフェ開店","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"c098f41601bb45fbb3bae393","title":"2024年度：法人全体決算 2.011億円収益","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"d4cf026684014ad1ad81b704","title":"2024年度：B型平均工賃約31,000円と後年の取材で紹介","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]}]},{"id":"78bdd76c92ae4be497799894","title":"2025〜2026｜最近の動き","note":"","labels":[],"href":"","children":[{"id":"3d797cfa477a4f17ad398966","title":"2025-04：ひまわり荘の移転、うえだ新小路に改称","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"565f8edee83143528efbe504","title":"2025-06-25：通常総会","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"96500769082e4ffb998c1577","title":"2025-08-06：虐待・身体拘束防止研修","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"e2d26aa894934e13b3fc9377","title":"2025-10-01：就労選択支援開始","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"","children":[]},{"id":"4bbaa547d2ba4a73949fe581","title":"2025-11-20：感染症・食中毒防止研修","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"a0819b0d70d648289c74e63c","title":"2026-06-09：日本セルプセンター訪問ルポ掲載","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"5ff30a0844a74d6bbd18293e","title":"2026-07-08：A型情報開示の更新告知","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":[],"href":"","children":[]},{"id":"b7a180d6e7c245e7b7d6b41b","title":"2026-07-30：岩手県NPO活動交流センター情報更新","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"d062d85d2465454e8bf227e8","title":"2026-10-07：GH空室一覧の掲載基準日","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"","children":[]},{"id":"f2c8a11671b640d28800bd30","title":"2026-10-31：本資料の照合日","note":"調査日を指す。法人の活動日ではない。","labels":[],"href":"","children":[]}]},{"id":"5d06bc547c014537815e50cd","title":"日付・沿革を確認する原典","note":"","labels":[],"href":"","children":[{"id":"96c38b08b55a47289cfc1786","title":"[G2] 盛岡市：所管NPO法人一覧（2025-12-23時点）","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":[],"href":"https://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","children":[]},{"id":"adad5222045341d6b6e9f550","title":"[F1] 法人公式：概要・理念・沿革","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"https://www.flat-teramachi.or.jp/about.html","children":[]},{"id":"48cf027e9e8942f18a4c1300","title":"[A2] 岩手県NPO活動交流センター：2025年度 団体活動報告書","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"https://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","children":[]},{"id":"9d43c535a1184317aab7adef","title":"[R1] 日本セルプセンター：訪問ルポ（2026-06-09公開）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"https://selpjapan.net/selp_repo/teramachi/","children":[]}]}]}},{"name":"資料監査・出典","root":{"id":"c1b71297aa1d4d6e8700bfb3","title":"出典台帳・信頼性・監査ノート","note":"公式の記述でも古い日付や誤植の可能性がある。2026年現在の事実とは、各公開時点を十分に吟味して区別する。","labels":[],"href":"","children":[{"id":"031f5ca3b9f044b68eaf358b","title":"資料階層と採用方針","note":"","labels":[],"href":"","children":[{"id":"905ef8ab71ea4502a37cb467","title":"第一層：登記・法人番号・盛岡市一覧・公式決算（数値は一次資料）","note":"根拠：\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]},{"id":"ac269385acc64a8492d5d998","title":"第二層：法人公式HP・法人作成活動報告（運営者の自己申告）","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"","children":[]},{"id":"8f740f7d11a84342af79bf0d","title":"第三層：日本セルプセンター訪問ルポ（第三者取材だが検証範囲に限界）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"2815fef6f67d4c5083f23bc3","title":"第四層：県登録団体DB（変更申請に基づくため項目更新の遅れに注意）","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"","children":[]},{"id":"5c787686ee7341faaaa59978","title":"別制度の届出資料や決算年度を混ぜない","note":"","labels":["誤読防止"],"href":"","children":[]}]},{"id":"4ecbc8f2d567480b8ac68481","title":"資料間の差異","note":"","labels":[],"href":"","children":[{"id":"f820b41557be4351b97959f3","title":"法人の創立：2010登記 vs 2011取材記事記述","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"a2d6c981e6d345be938ba31a","title":"NPO県DBはカフェ4店舗／法人2026時点は7店舗","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":[],"href":"","children":[]},{"id":"69c985606412435db9143474","title":"仁王定員：公式20名／訪問ルポ30名","note":"根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"1ad7437293204f738cafa20d","title":"A型の県平均89,112円を法人の実績と混同しない","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"","children":[]},{"id":"68c85b142f7d48db88f182c6","title":"会費2,000円×会員20名＝40,000円と実際の決算受取会費86,000円は単純一致しない","note":"会員区分・時点・未納/前納など説明候補はあるが事実を推定しない。\n\n根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":["確認課題"],"href":"","children":[]},{"id":"748fb3fa9ab548ea9d434e07","title":"2026年の資料が2024年度の数字を引用する場合、最新年度と混同しない","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"","children":[]}]},{"id":"ebd7409208fe43dba396f966","title":"報告から読み取れないこと","note":"","labels":[],"href":"","children":[{"id":"bfc8ac06f00f4caabcde7470","title":"最新の2025年度法人全体の決算値は今回裏づけ未取得","note":"","labels":["未確認"],"href":"","children":[]},{"id":"d2d40020eda74a48a9a2b2ec","title":"各店舗の純損益・家賃・人員詳細は公開数値からは算出不能","note":"","labels":["未確認"],"href":"","children":[]},{"id":"756fc089983947e1ac3d7d4c","title":"現在の役員全員の氏名と任期は未確認","note":"","labels":["未確認"],"href":"","children":[]},{"id":"9b0dec35d94c426895142e26","title":"2026年10月31日時点のGH空室は掲載基準日以降の変動あり","note":"","labels":["未確認"],"href":"","children":[]},{"id":"8d02f6ab85b04648b64c596e","title":"行政検査の個別結果、個別苦情、第三者評価は未取得","note":"","labels":["未確認"],"href":"","children":[]},{"id":"fec1aeb3d06b48ea9f56b5d9","title":"財務の健全性は単年度の正味財産だけでは判断できない","note":"","labels":["解釈"],"href":"","children":[]}]},{"id":"0c1715ab403a494dbe3888a0","title":"一次資料・公式情報","note":"","labels":[],"href":"","children":[{"id":"796fe300aecd4bd6a32b573b","title":"[G2] 盛岡市：所管NPO法人一覧（2025-12-23時点）","note":"根拠：\n【G2】盛岡市：所管NPO法人一覧（2025-12-23時点）\nhttps://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","labels":[],"href":"https://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/001/946/20251223.pdf","children":[]},{"id":"5f2f606291334d6ba9e78a15","title":"[G1] Gビズインフォ：法人番号・住所","note":"根拠：\n【G1】Gビズインフォ：法人番号・住所\nhttps://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","labels":[],"href":"https://info.gbiz.go.jp/hojin/ichiran?hojinBango=6400005002920","children":[]},{"id":"e1643ffd326a4c4ea092ad05","title":"[F1] 法人公式：概要・理念・沿革","note":"根拠：\n【F1】法人公式：概要・理念・沿革\nhttps://www.flat-teramachi.or.jp/about.html","labels":[],"href":"https://www.flat-teramachi.or.jp/about.html","children":[]},{"id":"2e500b89c57e4adca6cd5c8e","title":"[F2] 法人公式：トップ／新着情報","note":"根拠：\n【F2】法人公式：トップ／新着情報\nhttps://www.flat-teramachi.or.jp/","labels":[],"href":"https://www.flat-teramachi.or.jp/","children":[]},{"id":"d9eb8859e40c4c21ad4d06f1","title":"[F3] 法人公式：ファーム仁王（B型）","note":"根拠：\n【F3】法人公式：ファーム仁王（B型）\nhttps://www.flat-teramachi.or.jp/nio.html","labels":[],"href":"https://www.flat-teramachi.or.jp/nio.html","children":[]},{"id":"7d2c41c4650642cfae193efb","title":"[F4] 法人公式：ファーム神明町（A型ほか）","note":"根拠：\n【F4】法人公式：ファーム神明町（A型ほか）\nhttps://www.flat-teramachi.or.jp/shinmeicho.html","labels":[],"href":"https://www.flat-teramachi.or.jp/shinmeicho.html","children":[]},{"id":"8d2dca1d741f415f92bc828a","title":"[F5] 法人公式：アイランド／グループホーム","note":"根拠：\n【F5】法人公式：アイランド／グループホーム\nhttps://www.flat-teramachi.or.jp/island.html","labels":[],"href":"https://www.flat-teramachi.or.jp/island.html","children":[]},{"id":"3f6808ea5305492786c86b75","title":"[F6] 法人公式：拠点のアクセス・店舗","note":"根拠：\n【F6】法人公式：拠点のアクセス・店舗\nhttps://www.flat-teramachi.or.jp/access.html","labels":[],"href":"https://www.flat-teramachi.or.jp/access.html","children":[]},{"id":"f9c935113a884c9b9727dce1","title":"[F7] 法人公式：2024年度（令和6年度）決算報告書","note":"根拠：\n【F7】法人公式：2024年度（令和6年度）決算報告書\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_kessan_r6.pdf","children":[]},{"id":"0a645228bf8b4fa4b1914497","title":"[F8] 法人公式：A型経営改善計画書（2024年度の計画）","note":"根拠：\n【F8】法人公式：A型経営改善計画書（2024年度の計画）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_a_improvement_plan_r6.pdf","children":[]},{"id":"809c6ff8182b4c7d96fea5a6","title":"[F9] 法人公式：A型スコア表（2025年度実績）","note":"根拠：\n【F9】法人公式：A型スコア表（2025年度実績）\nhttps://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","labels":[],"href":"https://www.flat-teramachi.or.jp/assets/images/pdf_a_score_r8.pdf","children":[]}]},{"id":"9c8ada503e5147d6b087a91a","title":"登録・活動資料・第三者取材","note":"","labels":[],"href":"","children":[{"id":"e9229d6162584e45928699dd","title":"[A1] 岩手県NPO活動交流センター：団体データベース（2026-07-30更新）","note":"根拠：\n【A1】岩手県NPO活動交流センター：団体データベース（2026-07-30更新）\nhttps://www.aiinanpo.org/npodb/567/","labels":[],"href":"https://www.aiinanpo.org/npodb/567/","children":[]},{"id":"3bfc663a93a940fb90f3e44f","title":"[A2] 岩手県NPO活動交流センター：2025年度 団体活動報告書","note":"根拠：\n【A2】岩手県NPO活動交流センター：2025年度 団体活動報告書\nhttps://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","labels":[],"href":"https://www.aiinanpo.org/wp-content/uploads/2019/10/567-2.pdf","children":[]},{"id":"c2327bed91cf4b1dae601d45","title":"[R1] 日本セルプセンター：訪問ルポ（2026-06-09公開）","note":"根拠：\n【R1】日本セルプセンター：訪問ルポ（2026-06-09公開）\nhttps://selpjapan.net/selp_repo/teramachi/","labels":[],"href":"https://selpjapan.net/selp_repo/teramachi/","children":[]},{"id":"c5c84d6699cc442bb34fe7d2","title":"[R2] 福祉インフォ：ファーム神明町 就労選択支援（事業者概要の再掲）","note":"根拠：\n【R2】福祉インフォ：ファーム神明町 就労選択支援（事業者概要の再掲）\nhttps://fukushi.info/iwate/moriokashi/shuro-sentaku/0310102751_43","labels":[],"href":"https://fukushi.info/iwate/moriokashi/shuro-sentaku/0310102751_43","children":[]},{"id":"34f640857c8949029fbea5ca","title":"[G3] 内閣府 NPO法人ポータル（検索入口）","note":"根拠：\n【G3】内閣府 NPO法人ポータル（検索入口）\nhttps://www.npo-homepage.go.jp/npoportal/","labels":[],"href":"https://www.npo-homepage.go.jp/npoportal/","children":[]}]}]}}]</script>
+<script>
+(function(){'use strict';
+const sheets=JSON.parse(document.getElementById('research-data').textContent);
+const colors=['#4464b7','#6581b9','#4d9e8c','#b17e55','#7d69bd','#ac6f9b','#4b8cad','#92905b','#bd7868','#6c89c4','#389b83','#b17e5f','#7977b7'];
+const $=id=>document.getElementById(id); const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sheetMaps=sheets.map(s=>{const nodes=new Map();const walk=(n,parent,depth,branch,ancestors)=>{n.parent=parent;n.depth=depth;n.branch=branch;n.ancestors=ancestors;n.total=1;n.children.forEach((ch,i)=>{walk(ch,n,depth+1,depth===0?i:branch,ancestors.concat(n.id));n.total+=ch.total});nodes.set(n.id,n)};walk(s.root,null,0,-1,[]);return nodes});
+const state={sheet:0,expanded:sheets.map(()=>new Set()),selected:sheets.map(s=>s.root.id),query:'',view:'map',mode:'map',scale:1,tx:0,ty:0,worldW:1,worldH:1,minX:0,minY:0,layout:[],isReady:false};
+const root=()=>sheets[state.sheet].root, currMap=()=>sheetMaps[state.sheet], selected=()=>currMap().get(state.selected[state.sheet])||root();
+const hasChildren=n=>n.children&&n.children.length>0;
+const visibleChildren=n=>(n.depth===0||state.expanded[state.sheet].has(n.id))?n.children:[];
+function notify(s){let e=$('toast');e.textContent=s;e.classList.add('show');clearTimeout(notify.t);notify.t=setTimeout(()=>e.classList.remove('show'),1700)}
+function renderTabs(){const el=$('tabs');el.innerHTML='';sheets.forEach((s,i)=>{const b=document.createElement('button');b.className='tab'+(i===state.sheet?' active':'');b.type='button';b.innerHTML=`<span>${['01','02','03','04'][i]} ${escapeHTML(s.name)}</span><span class="n">${sheetMaps[i].size}</span>`;b.onclick=()=>switchSheet(i);el.appendChild(b)})}
+function switchSheet(i){if(state.sheet===i)return;state.sheet=i;state.query='';$('search').value='';renderTabs();renderSide();renderDetail();if(state.view==='map'){renderMap(true)}else renderOutline();$('canvasTitle').textContent=sheets[i].name;hidePanels()}
+function hidePanels(){if(innerWidth<=950){$('sidebar').classList.remove('show');$('detail').classList.remove('show')}}
+function renderSide(){let q=state.query.trim().toLocaleLowerCase();const el=$('sideList');el.innerHTML='';$('sideTitle').textContent=q?'検索結果':'分野別の目次';const nodes=q?Array.from(currMap().values()).filter(n=>(n.title+'\n'+n.note+'\n'+n.labels.join(' ')).toLocaleLowerCase().includes(q)):root().children;
+$('sideCount').textContent=nodes.length+'件';$('resultCount').textContent=q?`${nodes.length}件ヒット`:'';if(!nodes.length){el.innerHTML='<div class="side-note">該当項目はありません。別のキーワードをお試しください。</div>';return}
+nodes.forEach(n=>{let b=document.createElement('button');b.type='button';b.className='side-item'+(n.id===state.selected[state.sheet]?' active':'');b.style.setProperty('--c',colors[(n.branch<0?0:n.branch)%colors.length]);b.innerHTML=`<span class="side-dot"></span><span style="min-width:0"><span class="side-title">${escapeHTML(n.title)}</span><span class="side-desc">${q?'第'+n.depth+'階層':(n.total-1)+'項目を収録'}</span></span>`;b.onclick=()=>focusId(n.id,true);el.appendChild(b)});
+if(!q){const notice=document.createElement('p');notice.className='side-note';notice.innerHTML='本データは公開資料に基づく調査記録です。<b>「確定」「分析」「要再確認」</b>などの区分と原典を、各項目の詳細で確認できます。';el.appendChild(notice)}}
+function htmlLinkify(text){let s=String(text);let parts=s.split(/(https?:\/\/[^\s<>"']+)/g);return parts.map(v=>/^https?:\/\//.test(v)?'<a href="'+escapeHTML(v)+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(v)+'</a>':escapeHTML(v)).join('')}
+function renderDetail(){const n=selected(),el=$('detailScroll');const path=n.ancestors.map(id=>currMap().get(id)?.title).filter(Boolean);let notes=(n.note||'').split('\n').map(line=>{if(!line.trim())return '<div style="height:7px"></div>';if(/^https?:\/\//.test(line.trim()))return '<div class="url">'+htmlLinkify(line)+'</div>';return '<div class="para" style="margin:0">'+htmlLinkify(line)+'</div>'}).join('');if(!notes)notes='<span style="color:#93a0b2">この項目に補足ノートはありません。タイトルと関連分野を参照してください。</span>';
+const labels=n.labels.map(l=>'<span class="flag'+(/要|分析|仮説|未/.test(l)?' warn':'')+'">'+escapeHTML(l)+'</span>').join('');
+let href=n.href&&/^https?:\/\//.test(n.href)?`<div class="detail-section"><h3>関連リンク</h3><a href="${escapeHTML(n.href)}" target="_blank" rel="noopener noreferrer">参照元のページを開く ↗</a></div>`:'';
+el.innerHTML=`<div class="detail-brow"><span class="pill">${escapeHTML(sheets[state.sheet].name)}</span><span>第${n.depth}階層</span></div><h2 class="detail-title">${escapeHTML(n.title)}</h2>${labels?'<div class="detail-labels">'+labels+'</div>':''}<div class="detail-stat"><div class="statbox"><strong>${n.total-1}</strong><span>この項目以下の子孫項目</span></div><div class="statbox"><strong>${n.children.length}</strong><span>直下の項目</span></div></div><div class="detail-section"><h3>調査ノート・原典</h3><div class="detail-note">${notes}</div></div>${href}<div class="detail-section"><h3>階層</h3><div class="path">${[...path,n.title].map(escapeHTML).join('　›　')}</div></div><div class="detail-hint">基準日：2026年10月31日。資料中の金額・人数・役職・営業時間などは、原典に記載された時点の情報です。最新情報はリンク先で再確認してください。</div>`;
+}
+function selectId(id,panel=true){state.selected[state.sheet]=id;renderDetail();renderSide();document.querySelectorAll('.mapnode').forEach(el=>el.classList.toggle('active',el.dataset.id===id));document.querySelectorAll('.tree-row').forEach(el=>el.classList.toggle('active',el.dataset.id===id));if(panel&&innerWidth<=950)$('detail').classList.add('show')}
+function focusId(id,panel){const n=currMap().get(id);if(!n)return;if(state.view==='map'){for(let a of n.ancestors)state.expanded[state.sheet].add(a);renderMap(false);selectId(id,panel);const p=state.layout.find(p=>p.n.id===id);if(p){const z=Math.max(.7,Math.min(state.scale||1,1.25));state.scale=z;state.tx=$('viewport').clientWidth/2-(p.x-state.minX)*z;state.ty=$('viewport').clientHeight/2-(p.y-state.minY)*z;applyTransform()}}else{selectId(id,panel);let row=document.querySelector('.tree-row[data-id="'+id+'"]');if(row){let ancestor=row.closest('.tree-li').parentElement;while(ancestor&&ancestor.classList){ancestor.classList.remove('hidden');ancestor=ancestor.parentElement&&ancestor.parentElement.closest('.treeul')}row.scrollIntoView({block:'center',behavior:'smooth'})}}}
+function setExpansion(level){const s=state.expanded[state.sheet];s.clear();const walk=(n)=>{if(n.depth<level&&hasChildren(n))s.add(n.id);n.children.forEach(walk)};walk(root());if(state.view==='map')renderMap(true);else renderOutline();notify(level===1?'大項目だけを表示':level>9?'すべての枝を展開':'第'+level+'階層まで展開')}
+function toggleBranch(id){const ex=state.expanded[state.sheet];ex.has(id)?ex.delete(id):ex.add(id);renderMap(false);renderSide();renderDetail()}
+function nodeH(n){if(n.depth===0)return 91;const w=n.depth===1?232:272;let per=Math.max(11,Math.floor((w-32)/14.2));let weighted=Array.from(n.title).reduce((v,c)=>v+(/[\x00-\x7F]/.test(c)?0.55:1),0);let lines=Math.min(3,Math.ceil(weighted/per));return Math.max(n.depth===1?60:54,29+lines*18+(hasChildren(n)?5:0))}
+function layout(){const r=root();const gapSibling=14,gapFirst=28;let placed=[];
+const dims=n=>({w:n.depth===0?304:n.depth===1?232:272,h:nodeH(n)});
+const calc=n=>{n._h=nodeH(n);let kids=visibleChildren(n);let sum=kids.reduce((s,ch)=>s+calc(ch),0)+Math.max(0,kids.length-1)*gapSibling;return n._span=Math.max(n._h+18,sum)};
+const assign=(n,depth,x,y,side)=>{let {w,h}=dims(n);placed.push({n,depth,x,y,w,h,side});let kids=visibleChildren(n),sum=kids.reduce((s,ch)=>s+ch._span,0)+Math.max(0,kids.length-1)*gapSibling;let top=y-sum/2;for(let ch of kids){let cy=top+ch._span/2;assign(ch,depth+1,side*(depth===0?416:416+depth*348),cy,side);top+=ch._span+gapSibling}};
+calc(r);placed.push({n:r,depth:0,x:0,y:0,w:304,h:91,side:0});const all=r.children,split=Math.ceil(all.length/2);
+for(const [side,arr] of [[1,all.slice(0,split)],[-1,all.slice(split)]]){let total=arr.reduce((s,n)=>s+n._span,0)+Math.max(0,arr.length-1)*gapFirst;let top=-total/2;for(let n of arr){let y=top+n._span/2;assign(n,1,416*side,y,side);top+=n._span+gapFirst}}
+let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;for(let p of placed){minX=Math.min(minX,p.x-p.w/2-30);maxX=Math.max(maxX,p.x+p.w/2+30);minY=Math.min(minY,p.y-p.h/2-28);maxY=Math.max(maxY,p.y+p.h/2+28)}return{placed,minX,minY,maxX,maxY,W:Math.ceil(maxX-minX),H:Math.ceil(maxY-minY)}}
+function renderMap(shouldFit){const prev=state.layout.length>0?{sx:state.scale,tx:state.tx,ty:state.ty,minX:state.minX,minY:state.minY}:null;const o=layout();state.layout=o.placed;state.minX=o.minX;state.minY=o.minY;state.worldW=o.W;state.worldH=o.H;const world=$('world');world.innerHTML='';world.style.width=o.W+'px';world.style.height=o.H+'px';
+const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('width',o.W);svg.setAttribute('height',o.H);svg.setAttribute('viewBox','0 0 '+o.W+' '+o.H);svg.classList.add('lines');const pos=new Map(o.placed.map(p=>[p.n.id,p]));for(let p of o.placed){if(!p.n.parent)continue;const par=pos.get(p.n.parent.id);if(!par)continue;let side=p.side;let x1=par.x+side*par.w/2-o.minX,y1=par.y-o.minY,x2=p.x-side*p.w/2-o.minX,y2=p.y-o.minY;let dist=Math.abs(x2-x1);let cp=side*Math.max(45,dist*.53);let path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',`M ${x1.toFixed(1)} ${y1.toFixed(1)} C ${(x1+cp).toFixed(1)} ${y1.toFixed(1)}, ${(x2-cp).toFixed(1)} ${y2.toFixed(1)}, ${x2.toFixed(1)} ${y2.toFixed(1)}`);path.setAttribute('fill','none');path.setAttribute('stroke',colors[(p.n.branch<0?0:p.n.branch)%colors.length]);path.setAttribute('stroke-opacity','.55');path.setAttribute('stroke-width',p.n.depth===1?'2.7':'2');svg.appendChild(path)}world.appendChild(svg);
+const fragment=document.createDocumentFragment();let q=state.query.trim().toLocaleLowerCase();for(let p of o.placed){let n=p.n;let div=document.createElement('div');let color=colors[(n.branch<0?0:n.branch)%colors.length];div.className='mapnode'+(n.depth===0?' root':'')+(n.id===state.selected[state.sheet]?' active':'')+(q&&(n.title+'\n'+n.note).toLocaleLowerCase().includes(q)?' searchhit':'');div.style.setProperty('--branch',color);div.style.left=(p.x-o.minX)+'px';div.style.top=(p.y-o.minY)+'px';div.style.width=p.w+'px';div.style.height=p.h+'px';div.dataset.id=n.id;div.title=n.title;let meta=n.depth===0?'2026.10.31 · '+currMap().size+'項目':hasChildren(n)?n.children.length+'件の下位項目':'';div.innerHTML=`<div class="node-inner"><div class="node-title">${escapeHTML(n.title)}</div>${meta?'<div class="node-meta">'+escapeHTML(meta)+'</div>':''}</div>${hasChildren(n)&&n.depth!==0?'<button type="button" class="twisty" title="枝を開閉" aria-label="枝を開閉">'+(state.expanded[state.sheet].has(n.id)?'−':'+')+'</button>':''}`;
+div.onclick=e=>{if(e.target.closest('.twisty')){e.stopPropagation();toggleBranch(n.id);return}selectId(n.id,true)};div.ondblclick=()=>{if(hasChildren(n)&&n.depth!==0)toggleBranch(n.id)};fragment.appendChild(div)}world.appendChild(fragment);
+$('nodeCount').textContent=o.placed.length+' / '+currMap().size+' 項目を表示';$('canvasTitle').textContent=sheets[state.sheet].name;
+if(shouldFit||!state.isReady){fit();state.isReady=true}else if(prev){state.scale=prev.sx;state.tx=prev.tx+(o.minX-prev.minX)*prev.sx;state.ty=prev.ty+(o.minY-prev.minY)*prev.sx;applyTransform()}}
+function applyTransform(){let world=$('world');world.style.transform=`translate(${state.tx}px,${state.ty}px) scale(${state.scale})`;$('zoomReadout').textContent=Math.round(state.scale*100)+'%'}
+function fit(){let v=$('viewport');if(!v.clientWidth||!v.clientHeight)return;const pad=55;let s=Math.min((v.clientWidth-pad)/state.worldW,(v.clientHeight-pad)/state.worldH,1.4);state.scale=Math.max(.05,s);state.tx=(v.clientWidth-state.worldW*state.scale)/2;state.ty=(v.clientHeight-state.worldH*state.scale)/2;applyTransform()}
+function zoomAt(factor,cx,cy){let v=$('viewport');let ox=cx??v.clientWidth/2,oy=cy??v.clientHeight/2;let z=Math.max(.055,Math.min(2.8,state.scale*factor));state.tx=ox-(ox-state.tx)*z/state.scale;state.ty=oy-(oy-state.ty)*z/state.scale;state.scale=z;applyTransform()}
+function renderOutline(){const area=$('outline');area.innerHTML='';let h=document.createElement('div');h.className='outline-inner';h.innerHTML=`<div class="outline-header"><h2>${escapeHTML(sheets[state.sheet].name)}</h2><p>項目を選択すると右側に調査ノートと出典が表示されます。「＋」で下位項目を開閉できます。印刷時には全項目が表示されます。</p></div>`;
+function makeList(nodes,rootLevel){let ul=document.createElement('ul');ul.className='treeul';nodes.forEach(n=>{let li=document.createElement('li');li.className='tree-li'+(n.depth===0?' tree-root':'');let row=document.createElement('div');row.className='tree-row'+(n.id===state.selected[state.sheet]?' active':'');row.dataset.id=n.id;let sub;let toggle=document.createElement('button');toggle.className='tree-open'+(!hasChildren(n)?' empty':'');toggle.textContent=hasChildren(n)?'−':'•';toggle.onclick=()=>{if(sub){let hidden=sub.classList.toggle('hidden');toggle.textContent=hidden?'+':'−'}};let btn=document.createElement('button');btn.className='tree-select';btn.textContent=n.title;btn.onclick=()=>selectId(n.id,true);let mini=document.createElement('span');mini.className='tree-mini';mini.textContent=hasChildren(n)?(n.total-1)+'件':'';row.append(toggle,btn,mini);li.appendChild(row);if(hasChildren(n)){sub=makeList(n.children,false);if(n.depth>=1) {sub.classList.add('hidden');toggle.textContent='+'}li.appendChild(sub)}ul.appendChild(li)});return ul}
+h.appendChild(makeList([root()],true));area.appendChild(h)}
+function setView(mode){state.view=mode;$('viewport').style.display=mode==='map'?'block':'none';$('canvasTop').style.display=mode==='map'?'flex':'none';$('zoom').style.display=mode==='map'?'flex':'none';$('outline').classList.toggle('on',mode==='outline');$('mapBtn').classList.toggle('selected',mode==='map');$('outlineBtn').classList.toggle('selected',mode==='outline');if(mode==='outline')renderOutline();else {renderMap(true)}}
+$('sidebarBtn').onclick=()=>{$('sidebar').classList.toggle('show')};$('closeDetail').onclick=()=>$('detail').classList.remove('show');$('mapBtn').onclick=()=>setView('map');$('outlineBtn').onclick=()=>setView('outline');$('collapseBtn').onclick=()=>setExpansion(1);$('level2Btn').onclick=()=>setExpansion(2);$('expandBtn').onclick=()=>setExpansion(99);$('fitBtn').onclick=()=>state.view==='map'?fit():$('outline').scrollTo({top:0,behavior:'smooth'});$('zoomFit').onclick=fit;$('zoomIn').onclick=()=>zoomAt(1.25);$('zoomOut').onclick=()=>zoomAt(.8);$('printBtn').onclick=()=>{if(state.view!=='outline')renderOutline();window.print()};
+$('search').addEventListener('input',e=>{state.query=e.target.value.trim();renderSide();if(state.view==='map')renderMap(false);else renderOutline()});$('search').addEventListener('keydown',e=>{if(e.key==='Enter'&&state.query){let match=Array.from(currMap().values()).find(n=>(n.title+' '+n.note).toLocaleLowerCase().includes(state.query.toLocaleLowerCase()));if(match)focusId(match.id,true)}});
+window.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('search').focus();$('search').select()}else if(e.key==='Escape'){if(document.activeElement===$('search')){$('search').value='';state.query='';renderSide();if(state.view==='map')renderMap(false);$('search').blur()}hidePanels()}else if((e.key==='+'||e.key==='=')&&document.activeElement.tagName!=='INPUT')zoomAt(1.2);else if(e.key==='-'&&document.activeElement.tagName!=='INPUT')zoomAt(.83)});
+const v=$('viewport');let pointers=new Map(),dragState=null,pinchDistance=0;
+function localPoint(e){let r=v.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+v.addEventListener('pointerdown',e=>{if(e.target.closest('.mapnode'))return;v.setPointerCapture(e.pointerId);pointers.set(e.pointerId,localPoint(e));if(pointers.size===1){dragState={start:localPoint(e),tx:state.tx,ty:state.ty};v.classList.add('dragging')}if(pointers.size===2){let a=[...pointers.values()];pinchDistance=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);dragState=null}});
+v.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,localPoint(e));if(pointers.size===1&&dragState){let p=localPoint(e);state.tx=dragState.tx+p.x-dragState.start.x;state.ty=dragState.ty+p.y-dragState.start.y;applyTransform()}else if(pointers.size===2){let a=[...pointers.values()];let dist=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);let mx=(a[0].x+a[1].x)/2,my=(a[0].y+a[1].y)/2;if(pinchDistance>0&&dist>0)zoomAt(dist/pinchDistance,mx,my);pinchDistance=dist}});
+function endPointer(e){pointers.delete(e.pointerId);if(!pointers.size){dragState=null;pinchDistance=0;v.classList.remove('dragging')}else if(pointers.size===1){dragState={start:[...pointers.values()][0],tx:state.tx,ty:state.ty};pinchDistance=0}}v.addEventListener('pointerup',endPointer);v.addEventListener('pointercancel',endPointer);
+v.addEventListener('wheel',e=>{e.preventDefault();let p=localPoint(e);zoomAt(Math.exp(-e.deltaY*.0012),p.x,p.y)},{passive:false});
+window.addEventListener('resize',()=>{if(state.view==='map'&&state.isReady)fit()});
+renderTabs();renderSide();renderDetail();renderMap(true);
+})();
+</script>
 </body>
 </html>
